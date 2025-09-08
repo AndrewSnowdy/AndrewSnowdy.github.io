@@ -57,11 +57,17 @@
                     <p class="mt-1 text-gray-600">I led the electrical engineering in the Intelligent Ground Vehicle competition for a semester in which I augmented the current design of a modified electrical wheel chair to include saftey precautions of an emergancy stop and wireless stop. Portions of hardware and software was completed by students from years prior. A blog post can be found <a href="https://indiaeducationdiary.in/gannon-universitys-team-becomes-fourth-at-national-intelligent-ground-vehicle-competition/" class="text-indigo-600 hover:underline">here</a> for a brief overview of the competition</p>
 
                     <div class="mt-8 space-y-8 max-w-3xl mx-auto">
-                        <div class="grid grid-cols-2 grid-rows-2 gap-4 h-[400px]"> <img src="images/igv_robbot.png" alt="The full Intelligent Ground Vehicle robot" class="rounded-lg shadow-md w-full h-full object-cover col-span-1 row-span-2">
-                            <img src="images/igv_nrf.png" alt="The nRF radio transceiver wired to an Arduino" class="rounded-lg shadow-md w-full h-full object-cover">
-                            <img src="images/igv_nrf_box.png" alt="The 'Steve Stopper' emergency stop box" class="rounded-lg shadow-md w-full h-full object-cover">
+                        <!-- UPDATED IMAGE GRID: 1 ROW, UNEVEN COLUMNS -->
+                        <div>
+                           <div class="grid grid-cols-4 gap-4 h-[250px]">
+                                <!-- Main robot image taking up half the width -->
+                                <img src="images/igv_robbot.png" alt="The full Intelligent Ground Vehicle robot" class="col-span-2 rounded-lg shadow-md w-full h-full object-cover">
+                                <!-- Two smaller images taking up the other half -->
+                                <img src="images/igv_nrf.png" alt="The nRF radio transceiver wired to an Arduino" class="col-span-1 rounded-lg shadow-md w-full h-full object-cover">
+                                <img src="images/igv_nrf_box.png" alt="The 'Steve Stopper' emergency stop box" class="col-span-1 rounded-lg shadow-md w-full h-full object-cover">
+                            </div>
+                            <p class="mt-4 text-gray-600">The full IGV platform (left), the nRF radio transceiver (middle), and the custom "Steve Stopper" emergency stop box (right).</p>
                         </div>
-                        <p class="mt-4 text-gray-600">The full IGV platform (left), showcasing its design and components, alongside the nRF radio transceiver wired to an Arduino (top right), and the custom "Steve Stopper" emergency stop box (bottom right).</p>
                         
                         <div>
                             <img src="images/igv_schematic.png" alt="High-level electrical schematic for the Intelligent Ground Vehicle" class="rounded-lg shadow-md w-full object-contain">
@@ -121,3 +127,4 @@
 
 </body>
 </html>
+
