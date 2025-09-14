@@ -1,0 +1,31 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* Base styles for navigation links */
+.nav-link {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: #475569; /* slate-600 */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Hover state for all navigation links */
+.nav-link:hover {
+    background-color: #e2e8f0; /* slate-200 */
+    color: #1e293b; /* slate-800 */
+}
+
+/* Active state for the current page link */
+.nav-link.active {
+    background-color: #e0f2fe; /* sky-100 */
+    color: #0369a1; /* sky-700 */
+    font-weight: 600;
+}
+
