@@ -3,247 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew Snowdy</title>
+    <title>Andrew Snowdy | Electrical Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .project-link:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-white text-gray-800 font-sans">
 
-    <main class="max-w-5xl mx-auto px-6 py-12 md:py-20">
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <aside class="w-64 bg-slate-50 border-r border-slate-200 p-8 flex-shrink-0">
+            <div class="sticky top-8">
+                <h1 class="text-2xl font-bold text-slate-900">Andrew Snowdy</h1>
+                <p class="text-sm text-slate-600 mt-1">Electrical Engineer</p>
+                
+                <nav class="mt-12">
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="nav-link active">About Me</a></li>
+                        <li><a href="projects.html" class="nav-link">Projects</a></li>
+                        <li><a href="resume.html" class="nav-link">Resume/CV</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
 
-        <header class="mb-12">
-            <h1 class="text-4xl font-bold text-gray-900">Andrew Snowdy</h1>
-            <p class="mt-2 text-lg text-gray-600">An electrical engineer focused on controls and automation. Below is a selection of my work.</p>
-            <div class="mt-4 flex space-x-4">
-                <a href="mailto:drewsnowdy19@gmail.com" class="text-gray-600 hover:text-gray-900">Email</a>
-                <a href="#" class="text-gray-600 hover:text-gray-900">GitHub</a>
-                <a href="https://www.linkedin.com/in/andrew-snowdy-2a9833258/" class="text-gray-600 hover:text-gray-900">LinkedIn</a>
-                <a href="#" class="text-gray-600 hover:text-gray-900">Resume</a>
+                <div class="mt-12 text-sm text-slate-500">
+                    <p>&copy; 2025 Andrew Snowdy</p>
+                </div>
             </div>
-        </header>
+        </aside>
 
-        <section>
-            <h2 class="text-2xl font-bold text-gray-900 border-b pb-2 mb-8">Projects</h2>
-            
-            <div class="space-y-12">
-
-                <div class="border-b border-gray-200 pb-12">
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-xl font-bold">
-                            <a href="#" class="project-link text-gray-900">ROAM (Graduate Reserach)</a>
-                        </h3>
-                        <span class="text-sm font-medium text-gray-500">2025</span>
-                    </div>
-                    <p class="mt-1 text-gray-600">This is a short description of the project. Explain the main goal, what it does, and what your role was. Keep it concise and impactful.</p>
-                    
-                    <div class="mt-8 space-y-8 max-w-3xl mx-auto">
-                        <div>
-                            <img src="images/placeholder.png" alt="Placeholder image for the project" class="rounded-lg shadow-md w-full object-contain">
-                            <p class="mt-4 text-gray-600">A descriptive caption for the image goes here.</p>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Technology 1</span>
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Technology 2</span>
+        <!-- Main Content -->
+        <main class="flex-1 p-8 md:p-12 lg:p-16">
+            <section id="about">
+                <h2 class="text-3xl font-bold text-slate-900 border-b border-slate-200 pb-4 mb-8">About Me</h2>
+                <div class="flex flex-col md:flex-row gap-12 items-start">
+                    <img src="https://placehold.co/200x200/e2e8f0/334155?text=A.S." alt="Andrew Snowdy" class="rounded-full w-40 h-40 object-cover flex-shrink-0">
+                    <div class="text-slate-700 space-y-4 leading-relaxed">
+                        <p>
+                            Welcome to my portfolio. I am an electrical engineer with a deep focus on controls and automation. My passion lies in designing and implementing robust systems that solve complex challenges, from microgrid power restoration to autonomous vehicle control.
+                        </p>
+                        <p>
+                            Throughout my academic and personal projects, I've developed a strong skill set in power electronics, embedded systems, and control theory. I enjoy the entire engineering process, from initial concept and simulation in tools like MATLAB/Simulink to hands-on prototyping, soldering, and testing.
+                        </p>
+                        <p>
+                            This website showcases a selection of my work. Please feel free to explore my projects and get in touch if you'd like to connect.
+                        </p>
                     </div>
                 </div>
-
-                <div class="border-b border-gray-200 pb-12">
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-xl font-bold">
-                            <a href="#" class="project-link text-gray-900">National Eclipse Balloon Project (NEBP) and High Altitude Student Platform (HASP) (Undergraduate Reserach)</a>
-                        </h3>
-                        <span class="text-sm font-medium text-gray-500">2021-2024</span>
-                    </div>
-                    <p class="mt-1 text-gray-600">This is a short description of the project. Explain the main goal, what it does, and what your role was. Keep it concise and impactful.</p>
-                    
-                    <div class="mt-8 space-y-8 max-w-3xl mx-auto">
-                        <div>
-                            <div class="grid grid-cols-3 gap-4">
-                                <img src="images/nebp_erie_minutes_from_takeoff.jpg" alt="A balloon launch or related equipment" class="col-span-1 rounded-lg shadow-md w-full h-full object-cover">
-                                <img src="images/nebp_erie_up_and_away.jpg" alt="Another view of the balloon launch" class="col-span-2 rounded-lg shadow-md w-full h-full object-cover">
-                            </div>
-                            <p class="mt-4 text-gray-600">A descriptive caption for the image cluster goes here.</p>
-                        </div>
-
-                        <div>
-                            <img src="images/nebp_ballooning_system.png" alt="A new placeholder image for a third NEBP/HASP visual" class="rounded-lg shadow-md w-full object-contain">
-                            <p class="mt-4 text-gray-600">This is an additional image to further illustrate the NEBP/HASP project.</p>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">High-Altitude Balloons</span>
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Atmospheric Science</span>
-                    </div>
-                </div>
-
-                <div class="border-b border-gray-200 pb-12">
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-xl font-bold">
-                            <a href="#" class="project-link text-gray-900">A Novel Black-Start Approach for Inverter-Based Microgrids (Undergraduate Capstone)</a>
-                        </h3>
-                        <span class="text-sm font-medium text-gray-500">2023-2024</span>
-                    </div>
-                    <p class="mt-1 text-gray-600">This project introduces a novel black-start method for inverter-based microgrids to improve resiliency and rapid power restoration after a blackout. The goal was to design a grid control scheme using multiple grid-forming (GFM) inverters, specifically addressing the instability challenges found in microgrids with high inverter saturation. The system was implemented using a TI C2000 F28379D controller to send PWM signals to a BOOSTXL-3PHGaNINV inverter, successfully forming a stable grid.</p>
-                    
-                    <div class="mt-8 space-y-8 max-w-3xl mx-auto">
-                        <div>
-                            <img src="images/blackstart_system_design_overview.png" alt="System design overview diagram" class="rounded-lg shadow-md w-full object-contain">
-                            <p class="mt-4 text-gray-600">This system diagram shows the overall design, consisting of two microgrids with a total of five inverters. Each inverter has its own filter, transformer, and relay, allowing for a staged, bottom-up black-start sequence to restore power reliably.</p>
-                        </div>
-
-                        <div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <img src="images/blackstart_start_pathway.png" alt="Diagram of the black-start sequence" class="col-span-2 rounded-lg shadow-md w-full object-contain">
-                                <img src="images/blackstart_inverter_1_1_voltage.png" alt="Graph of anchor inverter voltage" class="rounded-lg shadow-md w-full object-contain">
-                                <img src="images/blackstart_inverter_1_1_current.png" alt="Graph of anchor inverter current" class="rounded-lg shadow-md w-full object-contain">
-                            </div>
-                            <p class="mt-4 text-gray-600">The black-start sequence (top) shows the timed connection of each inverter. The graphs below show the resulting voltage (left) and current (right) of the initial anchor inverter as it establishes the grid.</p>
-                        </div>
-                        
-                        <div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <img src="images/blackstart_grid_output_voltage.png" alt="Graph of final grid output voltage" class="rounded-lg shadow-md w-full object-contain">
-                                <img src="images/blackstart_grid_output_frequency.png" alt="Graph of final grid output frequency" class="rounded-lg shadow-md w-full object-contain">
-                            </div>
-                            <p class="mt-4 text-gray-600">Demonstration of overall system performance after synchronization. The final grid output voltage is stable (left), and the output frequency correctly settles at 60 Hz (right).</p>
-                        </div>
-
-                        <div>
-                            <div class="space-y-4">
-                                <img src="images/blackstart_voltage_and_current_control.png" alt="Simulink model of current and voltage control loops" class="rounded-lg shadow-md w-full object-contain">
-                                
-                                <div class="grid grid-cols-3 gap-4">
-                                    <img src="images/blackstart_microcontroller_system_overview.png" alt="Block diagram of the microcontroller system" class="col-span-1 rounded-lg shadow-md w-full h-full object-cover">
-                                    <img src="images/blackstart_droop_control.png" alt="Simulink model of droop control" class="col-span-2 rounded-lg shadow-md w-full h-full object-cover">
-                                </div>
-                            </div>
-                            <p class="mt-4 text-gray-600">The control architecture, showing the primary voltage and current control loop (top), the microcontroller system overview (bottom-left), and the droop control scheme for power sharing (bottom-right).</p>
-                        </div>
-                        
-                        <div>
-                            <div class="grid grid-cols-1 gap-4">
-                                <img src="images/blackstart_controller_inverter_unit.png" alt="Texas Instruments C2000 controller and BOOSTXL-3PHGaNINV inverter unit" class="rounded-lg shadow-md w-full object-contain">
-                                <img src="images/blackstart_full_electrical_setup.png" alt="Full electrical setup for the black-start project" class="rounded-lg shadow-md w-full object-contain">
-                            </div>
-                            <p class="mt-4 text-gray-600">The Texas Instruments C2000 controller and BOOSTXL-3PHGaNINV inverter unit (top), and the full electrical setup including power supplies and measurement equipment (bottom).</p>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Power Electronics</span>
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Controls</span>
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Matlab</span>
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Simulink</span>
-                    </div>
-                </div>
-
-                <div class="border-b-0 pb-12"> <!-- Note: border-b-0 to remove border from the last item -->
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-xl font-bold">
-                            <a href="#" class="project-link text-gray-900">Nixie Tube Clock Build</a>
-                        </h3>
-                        <span class="text-sm font-medium text-gray-500">2022</span>
-                    </div>
-                    <p class="mt-1 text-gray-600">This is a short description of the project. Explain the main goal, what it does, and what your role was. Keep it concise and impactful.</p>
-                    
-                    <div class="mt-8 space-y-8 max-w-3xl mx-auto">
-                        <div>
-                            <img src="images/placeholder.png" alt="Placeholder image for the project" class="rounded-lg shadow-md w-full object-contain">
-                            <p class="mt-4 text-gray-600">A descriptive caption for the image goes here.</p>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Electronics</span>
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Soldering</span>
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">PCB Design</span>
-                    </div>
-                </div>
-
-                <div class="border-b border-gray-200 pb-12">
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-xl font-bold">
-                            <a href="#" class="project-link text-gray-900">Intelligent Ground Vehicle (Gannon University Club)</a>
-                        </h3>
-                        <span class="text-sm font-medium text-gray-500">2023</span>
-                    </div>
-                    <p class="mt-1 text-gray-600">I led the electrical engineering in the Intelligent Ground Vehicle competition for a semester in which I augmented the current design of a modified electrical wheel chair to include saftey precautions of an emergancy stop and wireless stop. Portions of hardware and software was completed by students from years prior. A blog post can be found <a href="https://indiaeducationdiary.in/gannon-universitys-team-becomes-fourth-at-national-intelligent-ground-vehicle-competition/" class="text-indigo-600 hover:underline">here</a> for a brief overview of the competition</p>
-
-                    <div class="mt-8 space-y-8 max-w-3xl mx-auto">
-                        <div>
-                           <div class="grid grid-cols-4 gap-4">
-                                <img src="images/igv_robbot.png" alt="The full Intelligent Ground Vehicle robot" class="col-span-2 rounded-lg shadow-md w-full h-full object-cover">
-                                <img src="images/igv_nrf.png" alt="The nRF radio transceiver wired to an Arduino" class="col-span-1 rounded-lg shadow-md w-full h-full object-cover">
-                                <img src="images/igv_nrf_box.png" alt="The 'Steve Stopper' emergency stop box" class="col-span-1 rounded-lg shadow-md w-full h-full object-cover">
-                            </div>
-                            <p class="mt-4 text-gray-600">The full IGV platform (left), the nRF radio transceiver (middle), and the custom "Steve Stopper" emergency stop box (right).</p>
-                        </div>
-                        
-                        <div>
-                            <img src="images/igv_schematic.png" alt="High-level electrical schematic for the Intelligent Ground Vehicle" class="rounded-lg shadow-md w-full object-contain">
-                            <p class="mt-4 text-gray-600">The high-level electrical schematic, illustrating the power distribution and safety circuits for the Intelligent Ground Vehicle.</p>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 flex flex-wrap gap-2"> 
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Arduino</span>
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Controls</span>
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Electronics</span>
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Communications</span>
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Safety Systems</span>
-                    </div>
-                </div>
-
-                <div class="border-b border-gray-200 pb-12">
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-xl font-bold">
-                            <a href="#" class="project-link text-gray-900">Drone Build</a>
-                        </h3>
-                        <span class="text-sm font-medium text-gray-500">2020</span>
-                    </div>
-                    <p class="mt-4 text-gray-600">Towards the end of highschool I became very interested in drones, deciding to build one myself. I curtailed parts to my own liking, sticking with 4s lipo batteries, eco motors and a stack esc and controller - a mid powered drone with everything a true race FPV drone had equipped. After flying obsesively and crashing frequenly I decided to design disposable 3D printed prtectors for expendages and a stronger antenna mount. As well as going in depth for tuning using getfpv software linked to my controller.</p>
-                    
-                    <div class="mt-8 space-y-8 max-w-3xl mx-auto">
-
-                        <div>
-                            <img src="images/drone_without_top.jpg" alt="Custom built FPV drone assembled" class="rounded-lg shadow-md w-full object-contain">
-                            <p class="mt-4 text-gray-600">The assembled drone above is the finalized product. After meticulously looking into parts that had a mix of power, durability and price.</p>
-                        </div>
-
-                        <div>
-                            <div class="grid grid-cols-2 grid-rows-2 gap-4">
-                               <img src="images/drone.png" alt="Drone with top plate removed" class="row-span-2 rounded-lg shadow-md w-full h-full object-cover">
-                                <img src="images/drone_antenna.png" alt="3D printed antenna mount" class="rounded-lg shadow-md w-full h-full object-cover">
-                                <img src="images/drone_wing_protection.png" alt="3D printed arm protectors" class="rounded-lg shadow-md w-full h-full object-cover">
-                            </div>
-                            <p class="mt-4 text-gray-600">After crash landing and running into trees, I decided it would be best to print some disposable parts for the most frequently impacted parts. Prior to these parts I used a lot of hot glue and some plastic drinking straws to hold up antennas.</p>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">3D Printing</span>
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Betaflight</span>
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">CAD</span>
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Soldering</span>
-                        <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Electronics</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
+            </section>
+        </main>
+    </div>
 
 </body>
 </html>
+
