@@ -100,21 +100,30 @@
                             <div class="mt-8 space-y-8 max-w-3xl mx-auto">
                                 <div>
                                     <div class="grid grid-cols-2 gap-4">
-                                        <img src="images/neuroam_NOFIX.jpg" alt="Side by side image 1 for ROAM project" class="rounded-lg shadow-md w-full h-full object-cover">
+                                        <img src="images/arm_full_build.jpg" alt="Side by side image 1 for ROAM project" class="rounded-lg shadow-md w-full h-full object-cover">
                                         <img src="images/neuroam_Lineup.jpg" alt="Side by side image 2 for ROAM project" class="rounded-lg shadow-md w-full h-full object-cover">
                                     </div>
                                     <p class="mt-4 text-sm text-gray-600">A descriptive caption for the two images above.</p>
                                 </div>
                                 
                                 <div>
-                                    <video 
-                                        class="rounded-lg shadow-md w-full aspect-video bg-black" 
-                                        controls 
-                                        preload="metadata">
-                                        <source src="images/arm_torque_test.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <p class="mt-4 text-sm text-gray-600">Torque characterization test of the 3D-printed actuator, demonstrating the load-bearing capacity of the cycloidal reduction stage.</p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="aspect-square bg-black rounded-lg overflow-hidden shadow-md">
+                                            <video 
+                                                class="w-full h-full object-cover" 
+                                                autoplay loop muted playsinline>
+                                                <source src="images/arm_torque_test.mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        </div>
+                                        
+                                        <div class="aspect-square bg-slate-100 rounded-lg overflow-hidden shadow-md">
+                                            <img src="images/actuator_physical_build.jpg" alt="Physical build of the cycloidal actuator" class="w-full h-full object-cover">
+                                        </div>
+                                    </div>
+                                    <p class="mt-4 text-sm text-gray-600">
+                                        <strong>Cycloidal Actuator Development:</strong> A side-by-side comparison of the torque density characterization test (left) and the finalized physical actuator assembly (right), featuring custom 3D-printed housing and a high-torque BLDC motor.
+                                    </p>
                                 </div>
 
                                 <div>
