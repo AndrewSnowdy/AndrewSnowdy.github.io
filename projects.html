@@ -224,7 +224,7 @@
                                         <img src="images/blackstart_inverter_1_1_voltage.png" alt="Graph of anchor inverter voltage" class="rounded-lg shadow-md w-full object-contain">
                                         <img src="images/blackstart_inverter_1_1_current.png" alt="Graph of anchor inverter current" class="rounded-lg shadow-md w-full object-contain">
                                     </div>
-                                    <p class="mt-4 text-gray-600">The black-start sequence (top) shows the timed connection of each inverter. The graphs below show the resulting voltage (left) and current (right) of the initial anchor inverter as it establishes the grid.</p>
+                                    <p class="mt-4 text-gray-600">The black-start sequence at the top demonstrates the bottom-up grid restoration technique implemented in this study. The lower measurements show the interconnection voltage and current for one of the microgrids. As each new inverter connects at the labeled intervals, a brief transient occurs, followed rapidly by a stable, three-phase 60Hz signal with minimal harmonic distortion. This demonstrates the effectiveness of the decentralized droop control in achieving seamless synchronization.</p>
                                 </div>
                                 
                                 <div>
@@ -232,19 +232,19 @@
                                         <img src="images/blackstart_grid_output_voltage.png" alt="Graph of final grid output voltage" class="rounded-lg shadow-md w-full object-contain">
                                         <img src="images/blackstart_grid_output_frequency.png" alt="Graph of final grid output frequency" class="rounded-lg shadow-md w-full object-contain">
                                     </div>
-                                    <p class="mt-4 text-gray-600">Demonstration of overall system performance after synchronization. The final grid output voltage is stable (left), and the output frequency correctly settles at 60 Hz (right).</p>
+                                    <p class="mt-4 text-gray-600">This figure illustrates the final synchronization of both microgrids to form a complete, interconnected grid. As shown in the frequency plot, the system successfully recovers from a minor 0.02 Hz transient during the interconnection phase, with the droop controllers acting to stabilize the frequency back to a steady-state 60 Hz. The corresponding voltage waveforms confirm that the system achieves stable synchronization shortly after the final relay closure, resulting in a reliable three-phase output that meets service standards.</p>
                                 </div>
 
                                 <div>
                                     <div class="space-y-4">
-                                        <img src="images/blackstart_voltage_and_current_control.png" alt="Simulink model of current and voltage control loops" class="rounded-lg shadow-md w-full object-contain">
-                                        
                                         <div class="grid grid-cols-3 gap-4">
                                             <img src="images/blackstart_microcontroller_system_overview.png" alt="Block diagram of the microcontroller system" class="col-span-1 rounded-lg shadow-md w-full h-full object-cover">
                                             <img src="images/blackstart_droop_control.png" alt="Simulink model of droop control" class="col-span-2 rounded-lg shadow-md w-full h-full object-cover">
                                         </div>
+                                        
+                                        <img src="images/blackstart_voltage_and_current_control.png" alt="Simulink model of current and voltage control loops" class="rounded-lg shadow-md w-full object-contain">
                                     </div>
-                                    <p class="mt-4 text-gray-600">The control architecture, showing the primary voltage and current control loop (top), the microcontroller system overview (bottom-left), and the droop control scheme for power sharing (bottom-right).</p>
+                                    <p class="mt-4 text-gray-600">The system control architecture is outlined in the top-left block diagram, detailing the signal flow from sensor feedback to PWM generation. To its right, the droop controller regulates frequency, active power, and reactive power based on inputs derived from the Clarke and Park transforms, which convert three-phase AC measurements into a stationary dq reference frame. The resulting setpoints are fed into the nested control loops shown in the lower diagram. These loops regulate voltage and current through a series of PI controllers and anti-windup logic, ultimately producing the PWM signals required by the inverter boards for a stable three-phase power signal.</p>
                                 </div>
                                 
                                 <div>
@@ -252,7 +252,7 @@
                                         <img src="images/blackstart_controller_inverter_unit.png" alt="Texas Instruments C2000 controller and BOOSTXL-3PHGaNINV inverter unit" class="rounded-lg shadow-md w-full object-contain">
                                         <img src="images/blackstart_full_electrical_setup.png" alt="Full electrical setup for the black-start project" class="rounded-lg shadow-md w-full object-contain">
                                     </div>
-                                    <p class="mt-4 text-gray-600">The Texas Instruments C2000 controller and BOOSTXL-3PHGaNINV inverter unit (top), and the full electrical setup including power supplies and measurement equipment (bottom).</p>
+                                    <p class="mt-4 text-gray-600">The top image displays the full assembly of a single inverter unit, featuring a custom-designed PCB that integrates the LC filter, sensors, isolation delta-wye transformer, and connection relay. We fabricated five identical inverters to test collective grid-forming capabilities. The bottom image shows the complete experimental setup, where the five units are organized into two distinct microgrids. This system includes dedicated DC power supplies, static loads, and a central interconnect relay to manage the synchronization of the two microgrids.</p>
                                 </div>
                             </div>
 
@@ -305,7 +305,7 @@
                                 </h3>
                                 <span class="text-sm font-medium text-gray-500">2023</span>
                             </div>
-                            <p class="mt-1 text-gray-600">I led the electrical engineering in the Intelligent Ground Vehicle competition for a semester in which I augmented the current design of a modified electrical wheel chair to include saftey precautions of an emergancy stop and wireless stop. Portions of hardware and software was completed by students from years prior. A blog post can be found <a href="https://indiaeducationdiary.in/gannon-universitys-team-becomes-fourth-at-national-intelligent-ground-vehicle-competition/" class="text-indigo-600 hover:underline">here</a> for a brief overview of the competition</p>
+                            <p class="mt-1 text-gray-600">I led the electrical engineering in the Intelligent Ground Vehicle competition for a semester in which I augmented the current design of a modified electrical wheel chair to include saftey precautions of an emergancy stop and wireless stop. Portions of hardware and software was completed by students from years prior. We achieved fourth place in the competition</p>
 
                             <div class="mt-8 space-y-8 max-w-3xl mx-auto">
                                 <div>
@@ -314,12 +314,12 @@
                                         <img src="images/igv_nrf.png" alt="The nRF radio transceiver wired to an Arduino" class="col-span-1 rounded-lg shadow-md w-full h-full object-cover">
                                         <img src="images/igv_nrf_box.png" alt="The 'Steve Stopper' emergency stop box" class="col-span-1 rounded-lg shadow-md w-full h-full object-cover">
                                     </div>
-                                    <p class="mt-4 text-gray-600">The full IGV platform (left), the nRF radio transceiver (middle), and the custom "Steve Stopper" emergency stop box (right).</p>
+                                    <p class="mt-4 text-gray-600">The full IGV platform (left), the nRF radio transceiver (middle), and the custom 'Steve Stopper' wireless emergency stop (right). I designed the proto board and software with safety as the primary requirement. To prevent runaways, the system includes an automatic heartbeat-loss failsafe that stops the robot if it goes out of range. Additionally, the box features a manual power shutoff linked to an onboard relay for immediate hardware-level disconnection.</p>
                                 </div>
                                 
                                 <div>
                                     <img src="images/igv_schematic.png" alt="High-level electrical schematic for the Intelligent Ground Vehicle" class="rounded-lg shadow-md w-full object-contain">
-                                    <p class="mt-4 text-gray-600">The high-level electrical schematic, illustrating the power distribution and safety circuits for the Intelligent Ground Vehicle.</p>
+                                    <p class="mt-4 text-gray-600">The high-level electrical schematic, illustrating the power distribution and safety circuits for the Intelligent Ground Vehicle. 12v lead-acid battteries were used to power the wheelchair base, giving us more than enough power to carry the required 20lb payload.</p>
                                 </div>
                             </div>
 
