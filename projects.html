@@ -67,14 +67,19 @@
                                         <img src="images/roam_initial.jpg" alt="Side by side image 1 for ROAM project" class="rounded-lg shadow-md w-full h-full object-cover">
                                         <img src="images/roam_outside_gps.jpg" alt="Side by side image 2 for ROAM project" class="rounded-lg shadow-md w-full h-full object-cover">
                                     </div>
-                                    <p class="mt-4 text-sm text-gray-600">Left: Rapid Prototyping & Payload Integration "Shown here is the initial Hardware-in-the-Loop (HIL) prototype used for software validation and component integration. Although the early wiring was unoptimized, this stage was critical for verifying communication between the NVIDIA Jetson Orin 'brain' and the diverse sensor suite, which includes Flir stereo cameras, Ouster LiDAR, and a Vectornav IMU. The modular design allowed us to troubleshoot interface issues before migrating the entire stack into the final custom-engineered enclosure."
-
-                                                                        Right: Open-Sky Testing & Precision Temporal Synchronization "Outdoor testing was conducted to achieve a cold-start GNSS lock for the Zed-F9P GPS module, which served as the heartbeat for system-wide synchronization. The GPS distributes 1Hz and 20Hz PPS (Pulse Per Second) hardware triggers to the LiDAR and cameras, ensuring all sensors are hardware-synchronized. By acquiring high-fidelity NMEA signals, we achieved a temporal alignment of +/- 100ms across the fleet, enabling consistent multi-robot perception and robust inter-payload communication.</p>
+                                    <p class="mt-4 text-sm text-gray-600">
+                                        <p>
+                                            Left: Rapid Prototyping & Payload Integration "Shown here is the initial Hardware-in-the-Loop (HIL) prototype used for software validation and component integration. Although the early wiring was unoptimized, this stage was critical for verifying communication between the NVIDIA Jetson Orin 'brain' and the diverse sensor suite, which includes Flir stereo cameras, Ouster LiDAR, and a Vectornav IMU. The modular design allowed us to troubleshoot interface issues before migrating the entire stack into the final custom-engineered enclosure."
+                                        </p>
+                                        <p>
+                                            Right: Open-Sky Testing & Precision Temporal Synchronization "Outdoor testing was conducted to achieve a cold-start GNSS lock for the Zed-F9P GPS module, which served as the heartbeat for system-wide synchronization. The GPS distributes 1Hz and 20Hz PPS (Pulse Per Second) hardware triggers to the LiDAR and cameras, ensuring all sensors are hardware-synchronized. By acquiring high-fidelity NMEA signals, we achieved a temporal alignment of +/- 100ms across the fleet, enabling consistent multi-robot perception and robust inter-payload communication.
+                                        </p>
+                                    </p>
                                 </div>
 
                                 <div>
                                     <img src="images/roam_highbay_basestation.jpg" alt="Single full-width image for ROAM project" class="rounded-lg shadow-md w-full object-contain border">
-                                    <p class="mt-4 text-sm text-gray-600">A descriptive caption for the single image above.</p>
+                                    <p class="mt-4 text-sm text-gray-600">This stage of the project where the core sensor suite had basic operatoin, and our focus shifted to establishing robust mesh networking. We encountered a significant hardware compatibility hurdle: a legacy Doodle Labs radio module (housed in the orange box) could not natively interface with the newer radio versions on our payloads. After exhaustive troubleshooting, I implemented a hardware-level bridge by hardwiring a current-generation radio directly to the legacy unit. To validate the performance of this hybrid network, I developed ROS nodes to benchmark throughput and latency, ensuring the mesh could handle the high-bandwidth requirements of our 8 TB data collection effort.</p>
                                 </div>
                             </div>
 
