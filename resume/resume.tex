@@ -1,0 +1,182 @@
+\documentclass[10pt,letterpaper]{article}
+
+% -------------------- Packages --------------------
+\usepackage[margin=0.65in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{parskip}
+\usepackage{setspace}
+
+% -------------------- Styling --------------------
+\pagenumbering{gobble}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=*, topsep=2pt, itemsep=2pt, parsep=0pt}
+
+\titleformat{\section}
+  {\large\bfseries}
+  {}{0em}{}
+  [\titlerule]
+
+\titlespacing*{\section}{0pt}{8pt}{6pt}
+
+\newcommand{\eduEntry}[4]{
+  \begin{tabularx}{\textwidth}{X r}
+    \textbf{#1} & #2 \\
+  \end{tabularx}
+  \vspace{-2pt}
+  \hspace*{0.15in}#3 \hfill #4
+  \vspace{4pt}
+}
+
+
+% A compact "entry" layout: left = role/company, right = date
+\newcommand{\resumeEntry}[2]{
+  \begin{tabularx}{\textwidth}{X r}
+    \textbf{#1} & #2 \\
+  \end{tabularx}
+  \vspace{-18pt}
+}
+% Like above but without italic subtitle line
+\newcommand{\resumeEntrySimple}[2]{
+  \begin{tabularx}{\textwidth}{X r}
+    \textbf{#1} & #2 \\
+  \end{tabularx}
+}
+
+\begin{document}
+
+% -------------------- Header --------------------
+\begin{center}
+    {\LARGE \textbf{Andrew Snowdy}} \\[4pt]
+    \href{mailto:Drewsnowdy19@gmail.com}{Drewsnowdy19@gmail.com} \;\;|\;\;
+    Mobile: (716) 228--7038 \;\;|\;\;
+    \href{https://andrewsnowdy.github.io/}{Portfolio} \;\;|\;\;
+    \href{https://www.linkedin.com/in/andrew-snowdy-2a9833258/}{LinkedIn}
+\end{center}
+
+
+\vspace{2pt}
+
+% -------------------- Education --------------------
+\section*{Education}
+
+\eduEntry{Gannon University}{Graduated May 2024}
+{B.S. in Electrical Engineering, Minor in Mathematics}{GPA: 3.9 / 4.0}
+
+\eduEntry{Northeastern University}{Expected Graduation: May 2026}
+{M.S. in Electrical and Computer Engineering}{GPA: 3.7 / 4.0}
+% -------------------- Experience --------------------
+\section*{Relevant Experience}
+
+\resumeEntry{Research Assistant -- Northeastern University}{March -- Present}
+\begin{itemize}[leftmargin=0.3in, topsep=0pt, itemsep=2pt, parsep=0pt]
+  \item NEUFlow: Developing a stereo vision pipeline for drone deployment, working on image synchronization, Linux CSI camera drivers, and V4L2/GStreamer-based video streaming.
+  \item NEURoam: Engineered a high-precision, multi-sensor time synchronization system on the NVIDIA Jetson Orin platform. Achieved nanosecond-level data correlation across a complex sensor suite (Ouster LiDAR, GPS, IMU, cameras, radios) to enable robust, real-time SLAM. Scaled across five networked payloads.
+\end{itemize}
+
+\resumeEntry{Moog -- Aircraft Group Internship}{May 2023 -- January 2025}{}
+\begin{itemize}[leftmargin=0.3in, topsep=2pt, itemsep=2pt, parsep=0pt]
+  \item Assembled, calibrated, and tested hydraulic control units, power drive unit, and actuators under varied conditions to achieve FAA approval for flight.
+  \item Codified test-stand data from Gulfstream into a presentable format using MATLAB and VBA; analyzed results for anomalies. Created VBA scripts that are used company-wide for expediting data processing
+\end{itemize}
+
+\resumeEntry{Research Assistant -- Gannon University}{August 2021 -- May 2024}{}
+\begin{itemize}[leftmargin=0.3in, topsep=2pt, itemsep=2pt, parsep=0pt]
+  \item Lead engineer for NASA-sponsored High Altitude Student Platform (HASP); rectified a legacy ground-station receiver and built a high-altitude payload using PCB design, C++, and Python.
+  \item Contributed to a 10-student team for the National Eclipse Ballooning Project (NEBP); built payloads including a UHF/VHF video transmitter, GPS tracking for cutdown, and sensor data collection.
+\end{itemize}
+
+\resumeEntry{Niagara Refining LLC -- Electrical Engineering Internship}{May -- August 2022}
+\begin{itemize}[leftmargin=0.3in, topsep=0pt, itemsep=2pt, parsep=0pt]
+  \item Assisted electrical engineers and electricians on industrial facility upgrades and maintenance projects.
+  \item Programmed and tuned VFDs, updated PLC ladder logic, replaced sensors, and troubleshot Siemens control hardware. Developed and installed communication systems; supported electrical renovations
+\end{itemize}
+
+
+% \resumeEntry{Lab Operation Assistant -- Gannon University}{August 2021 -- May 2024}{}
+% \begin{itemize}[leftmargin=0.3in, topsep=2pt, itemsep=2pt, parsep=0pt]
+%   \item Collaborated with faculty and graduate students to set up an industrial PCB production line; programmed Kayo Pick \& Place and heating bed using Altium and embedded software.
+%   \item Assisted in labs; assembled PCs/microcontrollers and organized components.
+% \end{itemize}
+
+% \resumeEntry{Teacher's Assistant -- Circuits Class}{January -- May 2022}{}
+% \begin{itemize}[leftmargin=0.3in, topsep=2pt, itemsep=2pt, parsep=0pt]
+%   \item Supported students in lecture and lab to complete circuit analysis and build tasks; taught and demonstrated examples for a class of 20 students.
+% \end{itemize}
+
+
+% -------------------- Projects -------------------
+
+
+% \resumeEntry{President of IEEE Club}{August 2022 -- May 2024}{}
+% \begin{itemize}
+%   \item Attend conferences, compete in robotic events and written contests.
+% \end{itemize}
+
+% \resumeEntry{Intelligent Ground Vehicle}{August 2022 -- Dec 2023}{}
+% \begin{itemize}
+%   \item Design a vehicle to autonomously navigate while carrying a heavy payload.
+% \end{itemize}
+% \textbf{Nixie Tube Build} --- Designed PCB with integrated Arduino/Teensy and other IC.
+
+\section*{Selected Technical Projects}
+
+\resumeEntry{Master's Project -- Autonomous Mobile Manipulation on Toyota HSR}{2025 -- Present}
+\begin{itemize}[leftmargin=0.3in, topsep=0pt, itemsep=2pt, parsep=0pt]
+  \item Built a ROS 2-based mobile manipulation system enabling the Toyota HSR robot to autonomously navigate and traverse doorways in indoor environments. Deployed on simulation (Gazebo) and hardware.
+  \item Integrated perception, inverse kinematics, planning, and collision avoidance for coordinated base–arm control.
+\end{itemize}
+
+
+\resumeEntry{Unitree Go2 -- Whole-Body Control \& State Estimation}{2024 -- Present}
+\begin{itemize}[leftmargin=0.3in, topsep=0pt, itemsep=2pt, parsep=0pt]
+  \item Designed and implemented a quadratic-programming-based whole-body controller with contact constraints for regulating centroidal and base attitude dynamics.
+  \item Developed an EKF-based state estimator fusing IMU and joint kinematics for floating-base pose and velocity estimation. Implemented and validated in C++ on hardware.
+\end{itemize}
+
+
+\resumeEntry{Robotic Arm Build -- Perception \& Control}{2023 -- 2024}
+\begin{itemize}[leftmargin=0.3in, topsep=0pt, itemsep=2pt, parsep=0pt]
+  \item Built a low-cost, 6-DOF, 3D-printed robotic arm with closed-loop control, integrating custom gearboxes (harmonic, cycloidal, planetary) and gripper force feedback for contact detection.
+\end{itemize}
+
+% \resumeEntry{Undergraduate Capstone -- Black-Start Control for Inverter-Based Microgrids}{2023 -- 2024}
+% \begin{itemize}[leftmargin=0.3in, topsep=0pt, itemsep=2pt, parsep=0pt]
+%   \item Designed and implemented a grid-forming inverter control scheme for black-starting inverter-based microgrids using droop control, dq-frame control loops, and PWM on a TI C2000 (F28379D) platform.
+% \end{itemize}
+
+ 
+% -------------------- Skills --------------------
+\section*{Skills}
+
+\begin{multicols}{4}
+\begin{itemize}
+  \item Python, C, C++, 
+  \item MATLAB, Simulink
+  \item GitHub / Subversion
+  \item Embedded Systems
+  \item Optimization (QP)
+  \item State Estimation (EKF)
+  \item Linux
+  \item ROS 2
+  \item Networking
+  \item Altium, KiCad
+  \item Fusion 360
+  \item LabVIEW
+\end{itemize}
+\end{multicols}
+
+% \textbf{Basic Understand:}
+% \begin{multicols}{2}
+% \begin{itemize}
+%   \item VHDL/VCIM
+%   \item PSpice
+%   \item Java
+%   \item SQL
+% \end{itemize}
+% \end{multicols}
+
+\end{document}
