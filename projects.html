@@ -51,8 +51,13 @@
                                 </h3>
                                 <span class="text-sm font-medium text-gray-500">2025</span>
                             </div>
-                            <p class="mt-1 text-gray-600">NEURoam bridges the gap between heterogeneous robotic morphologies to create a unified data acquisition system. The fleet comprised of two wheeled robots, two quadrupeds, and a hybrid wheeled-quadruped. Each vehicle featured a standardized sensor payload centered on an NVIDIA Jetson Orin, allowing for consistent perception and data logging despite diverse locomotion styles. By executing coordinated, pre-planned trajectories across the Northeastern campus, we maintained telemetry and captured a comprehensive environmental dataset. This effort resulted in the generation of high-resolution 3D maps derived from over 8 TB of processed sensor data.</p>
+                            <p class="mt-1 text-gray-600">NEURoam bridges the gap between heterogeneous robotic morphologies to create a unified data acquisition system. The fleet comprised of two wheeled robots, two quadrupeds, and a hybrid wheeled-quadruped. Each vehicle featured a standardized sensor payload centered on an NVIDIA Jetson Orin, allowing for consistent perception and data logging despite diverse locomotion styles. By executing coordinated, pre-planned trajectories across the Northeastern campus, we maintained telemetry and captured a comprehensive environmental dataset. This effort resulted in the generation of high-resolution 3D maps derived from over 4 TB of processed sensor data.</p>
                             
+                            <div>
+                                <img src="images/roam_point_cloud.png" alt="Single full-width image for ROAM project" class="rounded-lg shadow-md w-full object-contain border">
+                                <p class="mt-4 text-sm text-gray-600">Proof that 'Garbage In, Garbage Out' is a real thing. I spent my time in the embedded guts of the Jetson Orin to ensure the LiDAR and IMU data was perfectly synced. The SLAM team did the heavy lifting on the reconstruction, but it all started with reliable hardware timing</p>
+                            </div>
+
                             <div class="mt-8 space-y-8 max-w-3xl mx-auto">
                                 <div>
                                     <div class="grid grid-cols-2 gap-4">
@@ -79,7 +84,7 @@
 
                                 <div>
                                     <img src="images/roam_highbay_basestation.jpg" alt="Single full-width image for ROAM project" class="rounded-lg shadow-md w-full object-contain border">
-                                    <p class="mt-4 text-sm text-gray-600">This stage of the project where the core sensor suite had basic operation, and our focus shifted to establishing robust mesh networking. We encountered a significant hardware compatibility hurdle: a legacy Doodle Labs radio module (housed in the orange box) could not natively interface with the newer radio versions on our payloads. After exhaustive troubleshooting, I implemented a hardware-level bridge by hardwiring a current-generation radio directly to the legacy unit. To validate the performance of this hybrid network, I developed ROS nodes to benchmark throughput and latency, ensuring the mesh could handle the high-bandwidth requirements of our 8 TB data collection effort.</p>
+                                    <p class="mt-4 text-sm text-gray-600">This stage of the project where the core sensor suite had basic operation, and our focus shifted to establishing robust mesh networking. We encountered a significant hardware compatibility hurdle: a legacy Doodle Labs radio module (housed in the orange box) could not natively interface with the newer radio versions on our payloads. After exhaustive troubleshooting, I implemented a hardware-level bridge by hardwiring a current-generation radio directly to the legacy unit. To validate the performance of this hybrid network, I developed ROS nodes to benchmark throughput and latency, ensuring the mesh could handle the high-bandwidth requirements of our 4 TB data collection effort.</p>
                                 </div>
                             </div>
 
