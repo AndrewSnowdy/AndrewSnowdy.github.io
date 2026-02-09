@@ -24,7 +24,6 @@
                             <li><a href="index.html" class="nav-link">About Me</a></li>
                             <li><a href="projects.html" class="nav-link active">Projects</a></li>
                             <li><a href="resume.html" class="nav-link">Resume</a></li>
-                            <li><a href="contact.html" class="nav-link">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -54,6 +53,13 @@
                                         <span class="text-red-500 font-medium ml-1">[Active Development]</span>
                                     </a>
                                 </h3>
+
+                                <div class="mt-1">
+                                    <a href="https://github.com/AndrewSnowdy/go2_controller" target="_blank" class="text-xs font-bold uppercase tracking-widest text-blue-600 hover:text-blue-800 transition-colors">
+                                        [ github ]
+                                    </a>
+                                </div>
+
                                 <span class="text-sm font-medium text-slate-500">Current Phase: Optimization</span>
                             </div>
                             <p class="mt-1 text-gray-600">
@@ -208,13 +214,24 @@
                                 </h3>
                                 <span class="text-sm font-medium text-gray-500">2025</span>
                             </div>
-                            <p class="mt-1 text-gray-600">NEURoam bridges the gap between heterogeneous robotic morphologies to create a unified data acquisition system. The fleet comprised of Boston Dynamics Spot, Unitree GO2 and GO2W, AgileX Scout and Hunter platforms. Each vehicle featured a standardized sensor payload centered on an NVIDIA Jetson Orin. By executing coordinated, pre-planned trajectories across the Northeastern campus, we maintained telemetry and captured a comprehensive environmental dataset. This effort resulted in the generation of high-resolution 3D maps derived from over 4 TB of processed sensor data.</p>
+                            <p class="mt-1 text-gray-600">
+                                NEURoam bridges the gap between heterogeneous robotic morphologies to create a unified data acquisition system. The fleet comprised 
+                                of Boston Dynamics Spot, Unitree GO2 and GO2W, AgileX Scout and Hunter platforms. Each vehicle featured a standardized sensor 
+                                payload centered on an NVIDIA Jetson Orin. By executing coordinated, pre-planned trajectories across the Northeastern campus, we 
+                                maintained telemetry and captured a comprehensive environmental dataset. This effort resulted in the generation of high-resolution 
+                                3D maps derived from over 4 TB of processed sensor data.
+                            </p>
                             
                             <div class="mt-8 space-y-8 max-w-3xl mx-auto">
                             
                                 <div>
                                     <img src="images/roam_point_cloud.png" alt="Single full-width image for ROAM project" class="rounded-lg shadow-md w-full object-contain border">
-                                    <p class="mt-4 text-sm text-gray-600">A campus-scale reconstruction derived from one of the payloads. While the SLAM backend handled the spatial mapping, I was responsible for the embedded architecture that ensured sub-millisecond synchronization between the LiDAR and inertial sensors. By managing the hardware triggers and PPS (Pulse Per Second) signals on the Jetson Orin, I ensured the data integrity required for seamless environment mapping.</p>
+                                    <p class="mt-4 text-sm text-gray-600">
+                                        A campus-scale reconstruction derived from one of the payloads. While the SLAM backend handled the spatial mapping, I was 
+                                        responsible for the embedded architecture that ensured sub-millisecond synchronization between the LiDAR and inertial sensors. 
+                                        By managing the hardware triggers and PPS (Pulse Per Second) signals on the Jetson Orin, I ensured the data integrity required 
+                                        for seamless environment mapping.
+                                    </p>
                                 </div>
 
                             
@@ -223,7 +240,13 @@
                                         <img src="images/neuroam_NOFIX.jpg" alt="Side by side image 1 for ROAM project" class="rounded-lg shadow-md w-full h-full object-cover">
                                         <img src="images/neuroam_Lineup.jpg" alt="Side by side image 2 for ROAM project" class="rounded-lg shadow-md w-full h-full object-cover">
                                     </div>
-                                    <p class="mt-4 text-sm text-gray-600">On the left is a close-up of the sensor payload integrated onto a Unitree Go2 quadruped, and on the right, the lineup of robots staged for a data collection run outside the Northeastern University engineering complex. Before deployment, the team developed and executed a series of diagnostic validation scripts to ensure system-wide sensor synchronization. Operating in an unconstrained campus environment introduced significant challenges, including mechanical vibration, pedestrians, and maintaining data consistency across differing locomotion modalities.</p>
+                                    <p class="mt-4 text-sm text-gray-600">
+                                        On the left is a close-up of the sensor payload integrated onto a Unitree Go2 quadruped, and on the right, the lineup of robots 
+                                        staged for a data collection run outside the Northeastern University engineering complex. Before deployment, the team developed 
+                                        and executed a series of diagnostic validation scripts to ensure system-wide sensor synchronization. Operating in an unconstrained 
+                                        campus environment introduced significant challenges, including mechanical vibration, pedestrians, and maintaining data consistency 
+                                        across differing locomotion modalities.
+                                    </p>
                                 </div>
                                 
                                 <div>
@@ -233,17 +256,28 @@
                                     </div>
                                     <div class="mt-4 text-sm text-gray-600">
                                         <p>
-                                            Shown on the left is the initial Hardware-in-the-Loop prototype used for software validation and component integration. Although the early wiring was messy, this stage was critical for verifying communication between the NVIDIA Jetson Orin and the sensor suite, which includes FLIR stereo cameras, Ouster LiDAR, VectorNav IMU, Zed-F9P GPS, and a doodle-labs radio.
+                                            Shown on the left is the initial Hardware-in-the-Loop prototype used for software validation and component integration. Although 
+                                            the early wiring was messy, this stage was critical for verifying communication between the NVIDIA Jetson Orin and the sensor suite, 
+                                            which includes FLIR stereo cameras, Ouster LiDAR, VectorNav IMU, Zed-F9P GPS, and a doodle-labs radio.
                                         </p>
                                         <p>
-                                            Outdoor testing was conducted to achieve a cold-start GNSS lock for the Zed-F9P GPS module, which served as the heartbeat for system-wide synchronization. The GPS distributes 1Hz PPS and NMEA to the jetson and 20Hz triggers to the LiDAR and cameras, ensuring all sensors are hardware-synchronized. By acquiring high-fidelity NMEA signals, we achieved a temporal alignment of +/- 100ms across the fleet, enabling consistent multi-robot perception and robust inter-payload communication.
+                                            Outdoor testing was conducted to achieve a cold-start GNSS lock for the Zed-F9P GPS module, which served as the heartbeat for 
+                                            system-wide synchronization. The GPS distributes 1Hz PPS and NMEA to the jetson and 20Hz triggers to the LiDAR and cameras, 
+                                            ensuring all sensors are hardware-synchronized. By acquiring high-fidelity NMEA signals, we achieved a temporal alignment of 
+                                            +/- 100ms across the fleet, enabling consistent multi-robot perception and robust inter-payload communication.
                                         </p>
                                     </div>
                                 </div>
 
                                 <div>
                                     <img src="images/roam_highbay_basestation.jpg" alt="Single full-width image for ROAM project" class="rounded-lg shadow-md w-full object-contain border">
-                                    <p class="mt-4 text-sm text-gray-600">This stage of the project where the core sensor suite had basic operation, and my focus shifted to establishing robust mesh networking. We encountered a significant hardware compatibility hurdle: legacy Doodle Labs radio modules (housed in the orange box) could not natively interface with the newer radio versions on our payloads. After exhaustive troubleshooting, I implemented a hardware-level bridge to newer radio units. To validate the performance of the network, I developed ROS nodes to benchmark throughput (IPERF) and latency (PING), ensuring the mesh had sufficient diagnostics during data collections.</p>
+                                    <p class="mt-4 text-sm text-gray-600">
+                                        This stage of the project where the core sensor suite had basic operation, and my focus shifted to establishing robust mesh networking. 
+                                        We encountered a significant hardware compatibility hurdle: legacy Doodle Labs radio modules (housed in the orange box) could not natively 
+                                        interface with the newer radio versions on our payloads. After exhaustive troubleshooting, I implemented a hardware-level bridge to newer 
+                                        radio units. To validate the performance of the network, I developed ROS nodes to benchmark throughput (IPERF) and latency (PING), ensuring 
+                                        the mesh had sufficient diagnostics during data collections.
+                                    </p>
                                 </div>
                             </div>
 
@@ -266,12 +300,19 @@
                                 </h3>
                                 <span class="text-sm font-medium text-gray-500">2025</span>
                             </div>
-                            <p class="mt-1 text-gray-600">Course project exploring decentralized back-end optimization methods for multi-robot SLAM. Implemented and evaluated local, heuristic consensus, and simplified ADMM-based approaches inspired by MESA using GTSAM. Performance was analyzed using Absolute Trajectory Error (ATE) on synthetic multi-robot datasets to study trade-offs between local accuracy, global consistency, and convergence behavior.</p>
+                            <p class="mt-1 text-gray-600">
+                                Course project exploring decentralized back-end optimization methods for multi-robot SLAM. Implemented and evaluated local, heuristic consensus, and simplified 
+                                ADMM-based approaches inspired by MESA using GTSAM. Performance was analyzed using Absolute Trajectory Error (ATE) on synthetic multi-robot datasets to study 
+                                trade-offs between local accuracy, global consistency, and convergence behavior.
+                            </p>
                             
                             <div class="mt-8 space-y-8 max-w-3xl mx-auto">
                                 <div>
                                     <img src="images/cslam_admm.png" alt="Single full-width image for ROAM project" class="rounded-lg shadow-md w-full object-contain border">
-                                    <p class="mt-4 text-sm text-gray-600">Comparison of noisy odometry, locally optimized trajectories with loop closures, and decentralized SLAM under assumed synchronous communication, shown alongside ground-truth trajectories in faint gray.</p>
+                                    <p class="mt-4 text-sm text-gray-600">
+                                        Comparison of noisy odometry, locally optimized trajectories with loop closures, and decentralized SLAM under assumed synchronous communication, shown 
+                                        alongside ground-truth trajectories in faint gray.
+                                    </p>
                                 </div>
                             </div>
 
@@ -293,11 +334,20 @@
                                 <span class="text-sm font-medium text-gray-500">2024 - 2025</span>
                             </div>
                             <div class="mt-1 text-gray-600">
-                                <p>I started this project because I believe that lack of access to industrial-grade hardware shouldn't be a barrier to learning robotics. My goal was to design an arm that anyone could build on a budget, without sacrificing the accuracy and performance typically reserved for expensive commercial systems.</p>
+                                <p>
+                                    I started this project because I believe that lack of access to industrial-grade hardware shouldn't be a barrier to learning robotics. My goal was to design an arm 
+                                    that anyone could build on a budget, without sacrificing the accuracy and performance typically reserved for expensive commercial systems.
+                                </p>
 
-                                <p>The heart of this build—and the most challenging engineering hurdle—lies in the actuators. High precision and high torque are traditionally difficult to achieve with 3D-printed components, but by taking a fresh approach to gearbox design and FOC control, I’ve been able to bring this arm to life.</p>
+                                <p>
+                                    The heart of this build—and the most challenging engineering hurdle—lies in the actuators. High precision and high torque are traditionally difficult to achieve with 
+                                    3D-printed components, but by taking a fresh approach to gearbox design and FOC control, I’ve been able to bring this arm to life.
+                                </p>
 
-                                <p>Currently, I am finalizing a custom UI and prepping the project for a full open-source release on GitHub. Stay tuned for more updates as I move into complex manipulation tasks and refined motion planning.</p>
+                                <p>
+                                    Currently, I am finalizing a custom UI and prepping the project for a full open-source release on GitHub. Stay tuned for more updates as I move into complex 
+                                    manipulation tasks and refined motion planning.
+                                </p>
 
                             </div>
                             
@@ -307,7 +357,13 @@
                                         <img src="images/arm_full_build.jpg" alt="Side by side image 1 for ROAM project" class="rounded-lg shadow-md w-full h-full object-cover">
                                         <img src="images/arm_fusion.png" alt="Side by side image 2 for ROAM project" class="rounded-lg shadow-md w-full h-full object-cover">
                                     </div>
-                                    <p class="mt-4 text-sm text-gray-600">The full build of the arm (left) alongside the Fusion 360 model (right) highlights the mechanical packaging and weight distribution of the system. By moving the motors as close to the base pivots as possible and utilizing timing belt drives, I’ve significantly reduced joint inertia. The wrist was designed to be purely spherical, allowing Pieper's criteria to hold for efficient, closed-form analytic IK. For the end effector, I've integrated dual FeeTech STS3032 servos paired with compliant material so fingers can wrap around objects for a secure grip, while the servos provide real-time torque feedback. The entire system is powered by a compact, detachable dual 24V PSU.</p>
+                                    <p class="mt-4 text-sm text-gray-600">
+                                        The full build of the arm (left) alongside the Fusion 360 model (right) highlights the mechanical packaging and weight distribution of the system. By moving the motors 
+                                        as close to the base pivots as possible and utilizing timing belt drives, I’ve significantly reduced joint inertia. The wrist was designed to be purely spherical, 
+                                        allowing Pieper's criteria to hold for efficient, closed-form analytic IK. For the end effector, I've integrated dual FeeTech STS3032 servos paired with compliant 
+                                        material so fingers can wrap around objects for a secure grip, while the servos provide real-time torque feedback. The entire system is powered by a compact, 
+                                        detachable dual 24V PSU.
+                                    </p>
                                 </div>
                                 
                                 <div>
@@ -332,7 +388,12 @@
 
                                     </div>
                                     
-                                    <p class="mt-4 text-sm text-gray-600">A look at the gearbox evolution for my robotic arm project. Featured on top are the various iterations I’ve designed: two 40:1 cycloidal drives (NEMA 17 and NEMA 23 variants), three 28:1 harmonic drives with specialized couplings, and a NEMA 11-powered 4:1 planetary gear. Each motor is integrated with a rear-mounted MKS closed-loop FOC controller via CAN bus. The video below highlights early torque response testing—holding 15 lbs at a 0.5m moment arm—alongside a close-up of the cycloidal drive.</p>
+                                    <p class="mt-4 text-sm text-gray-600">
+                                        A look at the gearbox evolution for my robotic arm project. Featured on top are the various iterations I’ve designed: two 40:1 cycloidal drives (NEMA 17 and 
+                                        NEMA 23 variants), three 28:1 harmonic drives with specialized couplings, and a NEMA 11-powered 4:1 planetary gear. Each motor is integrated with a 
+                                        rear-mounted MKS closed-loop FOC controller via CAN bus. The video below highlights early torque response testing—holding 15 lbs at a 0.5m moment 
+                                        arm—alongside a close-up of the cycloidal drive.
+                                    </p>
                                 </div>
                             </div>
 
@@ -354,7 +415,13 @@
                                 </h3>
                                 <span class="text-sm font-medium text-gray-500">2021-2024</span>
                             </div>
-                            <p class="mt-1 text-gray-600">The NEBP is a NASA and NSF-sponsored initiative designed to simulate a full-scale mission lifecycle through scientific ballooning during solar eclipses. Over a three-year tenure—culminating in my role as Team Lead—I managed the design, testing, and deployment of complex payloads for the 2023 and 2024 eclipses. My work focused on the Engineering Track, where our team was tasked with live-streaming high-altitude video and conducting autonomous atmospheric experiments. This role required balancing high-stakes technical requirements with the logistical challenges of field operations, ensuring system reliability in extreme stratospheric environments. </p>
+                            <p class="mt-1 text-gray-600">
+                                The NEBP is a NASA and NSF-sponsored initiative designed to simulate a full-scale mission lifecycle through scientific ballooning during solar eclipses. 
+                                Over a three-year tenure—culminating in my role as Team Lead—I managed the design, testing, and deployment of complex payloads for the 2023 and 2024 eclipses. 
+                                My work focused on the Engineering Track, where our team was tasked with live-streaming high-altitude video and conducting autonomous atmospheric experiments. 
+                                This role required balancing high-stakes technical requirements with the logistical challenges of field operations, ensuring system reliability in extreme 
+                                stratospheric environments.
+                            </p>
                             
                             <div class="mt-8 space-y-8 max-w-3xl mx-auto">
                                 <div>
@@ -362,7 +429,13 @@
                                         <img src="images/nebp_erie_minutes_from_takeoff.jpg" alt="A balloon launch or related equipment" class="col-span-1 rounded-lg shadow-md w-full h-full object-cover">
                                         <img src="images/nebp_erie_up_and_away.jpg" alt="Another view of the balloon launch" class="col-span-2 rounded-lg shadow-md w-full h-full object-cover">
                                     </div>
-                                    <p class="mt-4 text-sm text-gray-600">Our flight string consisted of a helium-filled balloon coupled to a venting system, a recovery parachute, and four modular cylindrical payloads. Not pictured is the ground station, which utilized a dish (RocketModem 5.8 Ghz), patch (Tracking), and Yagi antenna (RFD 900 Mhz) mounted on a 2-DOF tracking system for real-time telemetry. The launch process required rigorous pre-flight checklists and on-site troubleshooting to ensure system reliability during the critical eclipse window. We were fortunate to deploy this system across multiple states to capture data during both the 2023 Annular and 2024 Total Solar Eclipses.</p>
+                                    <p class="mt-4 text-sm text-gray-600">
+                                        Our flight string consisted of a helium-filled balloon coupled to a venting system, a recovery parachute, and four modular cylindrical payloads. 
+                                        Not pictured is the ground station, which utilized a dish (RocketModem 5.8 Ghz), patch (Tracking), and Yagi antenna (RFD 900 Mhz) mounted on a 
+                                        2-DOF tracking system for real-time telemetry. The launch process required rigorous pre-flight checklists and on-site troubleshooting to ensure 
+                                        system reliability during the critical eclipse window. We were fortunate to deploy this system across multiple states to capture data during 
+                                        both the 2023 Annular and 2024 Total Solar Eclipses.
+                                    </p>
                                 </div>
     
                                 <div>
@@ -370,17 +443,31 @@
                                         <img src="images/nebp_eclipse_at_max_altitude.jpg" alt="Another side by side image C" class="rounded-lg shadow-md w-full h-full object-cover">
                                         <img src="images/nebp_eclipse_at_max_altitude2.jpg" alt="Another side by side image D" class="rounded-lg shadow-md w-full h-full object-cover">
                                     </div>
-                                    <p class="mt-4 text-sm text-gray-600">Just a showcase of some of the images we captured, one of the moon's shadow onto the earth and the other is of the total eclipse.</p>
+                                    <p class="mt-4 text-sm text-gray-600">
+                                        Just a showcase of some of the images we captured, one of the moon's shadow onto the earth and the other is of the total eclipse.
+                                    </p>
                                 </div>
 
                                 <div>
                                     <img src="images/nebp_ballooning_system.png" alt="A new placeholder image for a third NEBP/HASP visual" class="rounded-lg shadow-md w-full object-contain border">
-                                    <p class="mt-4 text-sm text-gray-600">This system architecture diagram illustrates our multi-payload flight string and ground segment. The primary command-and-control uplink utilized an Iridium satellite modem, which distributed data locally to payloads via a low-power XBee mesh network. For high-bandwidth data, we implemented a multi-frequency downlink strategy: an RFD 900 MHz link for critical telemetry and state-of-health diagnostics, and a 5.8 GHz RocketModem for real-time video streaming. To ensure mission success and payload recovery, we integrated redundant GPS trackers to mitigate the telemetry dropouts frequently encountered in the stratospheric environment.</p>
+                                    <p class="mt-4 text-sm text-gray-600">
+                                        This system architecture diagram illustrates our multi-payload flight string and ground segment. The primary command-and-control uplink utilized an 
+                                        Iridium satellite modem, which distributed data locally to payloads via a low-power XBee mesh network. For high-bandwidth data, we implemented a 
+                                        multi-frequency downlink strategy: an RFD 900 MHz link for critical telemetry and state-of-health diagnostics, and a 5.8 GHz RocketModem for 
+                                        real-time video streaming. To ensure mission success and payload recovery, we integrated redundant GPS trackers to mitigate the telemetry dropouts 
+                                        frequently encountered in the stratospheric environment.
+                                    </p>
                                 </div>
                                 
                                 <div>
                                     <img src="images/nebp_iridium_testing.jpg" alt="A new placeholder image for a third NEBP/HASP visual" class="rounded-lg shadow-md w-full object-contain border">
-                                    <p class="mt-4 text-sm text-gray-600">Testing of the Iridium and Vent/Cutdown subsystems. The Iridium satellite modem serves as the primary communication uplink, providing global GPS positioning and command queuing via an email-based gateway. This data is bridged locally to other payloads via a low-power XBee mesh network. The custom-designed, 3D-printed vent on the left is utilized for active altitude control by regulating gas release. Furthermore, the system incorporates a redundant nichrome-wire cutdown mechanism. Upon command, the high-resistance wire is heated to sever the load-bearing flight string, enabling immediate balloon release. </p>
+                                    <p class="mt-4 text-sm text-gray-600">
+                                        Testing of the Iridium and Vent/Cutdown subsystems. The Iridium satellite modem serves as the primary communication uplink, providing global GPS 
+                                        positioning and command queuing via an email-based gateway. This data is bridged locally to other payloads via a low-power XBee mesh network. 
+                                        The custom-designed, 3D-printed vent on the left is utilized for active altitude control by regulating gas release. Furthermore, the system 
+                                        incorporates a redundant nichrome-wire cutdown mechanism. Upon command, the high-resistance wire is heated to sever the load-bearing flight 
+                                        string, enabling immediate balloon release.
+                                    </p>
                                 </div>
 
                                 <div>
@@ -388,7 +475,13 @@
                                         <img src="images/nebp_vent_and_pcb.jpg" alt="New side by side image A" class="rounded-lg shadow-md w-full h-full object-cover">
                                         <img src="images/nebp_rfd.jpg" alt="New side by side image B" class="rounded-lg shadow-md w-full h-full object-cover">
                                     </div>
-                                    <p class="mt-4 text-sm text-gray-600">On the right is the RFD900 telemetry module integrated with our sensor stack, including a barometer, IMU, and temperature sensors. This payload ended up serving as our primary backbone for real-time flight diagnostics and was the most reliable data link throughout the mission. To the left is the altitude control PCB, which I designed in Altium by reverse-engineering and optimizing legacy hardware models. This board interfaces with a high-torque servo to actuate the helium release valve, enabling active station-keeping. The 3D-printed vent structure, designed to attach directly to the balloon envelope, is visible in the background.</p>
+                                    <p class="mt-4 text-sm text-gray-600">
+                                        On the right is the RFD900 telemetry module integrated with our sensor stack, including a barometer, IMU, and temperature sensors. This payload 
+                                        ended up serving as our primary backbone for real-time flight diagnostics and was the most reliable data link throughout the mission. To the 
+                                        left is the altitude control PCB, which I designed in Altium by reverse-engineering and optimizing legacy hardware models. This board interfaces 
+                                        with a high-torque servo to actuate the helium release valve, enabling active station-keeping. The 3D-printed vent structure, designed to attach 
+                                        directly to the balloon envelope, is visible in the background.
+                                    </p>
                                 </div>
                                 
                             </div>
@@ -411,12 +504,20 @@
                                 </h3>
                                 <span class="text-sm font-medium text-gray-500">2023-2024</span>
                             </div>
-                            <p class="mt-1 text-gray-600">This project introduces a novel black-start method for inverter-based microgrids to improve resiliency and rapid power restoration after a blackout. The goal was to design a grid control scheme using multiple grid-forming (GFM) inverters, specifically addressing the instability challenges found in microgrids with high inverter saturation. The system was implemented using a TI C2000 F28379D controller to send PWM signals to a BOOSTXL-3PHGaNINV inverter, successfully forming a stable grid.</p>
+                            <p class="mt-1 text-gray-600">
+                                This project introduces a novel black-start method for inverter-based microgrids to improve resiliency and rapid power restoration after a blackout. 
+                                The goal was to design a grid control scheme using multiple grid-forming (GFM) inverters, specifically addressing the instability challenges found 
+                                in microgrids with high inverter saturation. The system was implemented using a TI C2000 F28379D controller to send PWM signals to a BOOSTXL-3PHGaNINV 
+                                inverter, successfully forming a stable grid.
+                            </p>
                             
                             <div class="mt-8 space-y-8 max-w-3xl mx-auto">
                                 <div>
                                     <img src="images/blackstart_system_design_overview.png" alt="System design overview diagram" class="rounded-lg shadow-md w-full object-contain">
-                                    <p class="mt-4 text-gray-600">This system diagram shows the overall design, consisting of two microgrids with a total of five inverters. Each inverter has its own filter, transformer, and relay, allowing for a staged, bottom-up black-start sequence to restore power reliably.</p>
+                                    <p class="mt-4 text-gray-600">
+                                        This system diagram shows the overall design, consisting of two microgrids with a total of five inverters. Each inverter has its own filter, 
+                                        transformer, and relay, allowing for a staged, bottom-up black-start sequence to restore power reliably.
+                                    </p>
                                 </div>
 
                                 <div>
@@ -425,7 +526,12 @@
                                         <img src="images/blackstart_inverter_1_1_voltage.png" alt="Graph of anchor inverter voltage" class="rounded-lg shadow-md w-full object-contain">
                                         <img src="images/blackstart_inverter_1_1_current.png" alt="Graph of anchor inverter current" class="rounded-lg shadow-md w-full object-contain">
                                     </div>
-                                    <p class="mt-4 text-gray-600">The black-start sequence at the top demonstrates the bottom-up grid restoration technique implemented in this study. The lower measurements show the interconnection voltage and current for one of the microgrids. As each new inverter connects at the labeled intervals, a brief transient occurs, followed rapidly by a stable, three-phase 60Hz signal with minimal harmonic distortion. This demonstrates the effectiveness of the decentralized droop control in achieving seamless synchronization.</p>
+                                    <p class="mt-4 text-gray-600">
+                                        The black-start sequence at the top demonstrates the bottom-up grid restoration technique implemented in this study. The lower measurements show 
+                                        the interconnection voltage and current for one of the microgrids. As each new inverter connects at the labeled intervals, a brief transient 
+                                        occurs, followed rapidly by a stable, three-phase 60Hz signal with minimal harmonic distortion. This demonstrates the effectiveness of the 
+                                        decentralized droop control in achieving seamless synchronization.
+                                    </p>
                                 </div>
                                 
                                 <div>
@@ -433,7 +539,12 @@
                                         <img src="images/blackstart_grid_output_voltage.png" alt="Graph of final grid output voltage" class="rounded-lg shadow-md w-full object-contain">
                                         <img src="images/blackstart_grid_output_frequency.png" alt="Graph of final grid output frequency" class="rounded-lg shadow-md w-full object-contain">
                                     </div>
-                                    <p class="mt-4 text-gray-600">This figure illustrates the final synchronization of both microgrids to form a complete, interconnected grid. As shown in the frequency plot, the system successfully recovers from a 0.4 Hz transient during the interconnection phase, with the droop controllers acting to stabilize the frequency back to a steady-state 60 Hz. The corresponding voltage waveforms confirm that the system achieves stable synchronization shortly after the final relay closure, resulting in a reliable three-phase output that meets service standards.</p>
+                                    <p class="mt-4 text-gray-600">
+                                        This figure illustrates the final synchronization of both microgrids to form a complete, interconnected grid. As shown in the frequency plot, 
+                                        the system successfully recovers from a 0.4 Hz transient during the interconnection phase, with the droop controllers acting to stabilize the 
+                                        frequency back to a steady-state 60 Hz. The corresponding voltage waveforms confirm that the system achieves stable synchronization shortly 
+                                        after the final relay closure, resulting in a reliable three-phase output that meets service standards.
+                                    </p>
                                 </div>
 
                                 <div>
@@ -445,7 +556,13 @@
                                         
                                         <img src="images/blackstart_voltage_and_current_control.png" alt="Simulink model of current and voltage control loops" class="rounded-lg shadow-md w-full object-contain">
                                     </div>
-                                    <p class="mt-4 text-gray-600">The system control architecture is outlined in the top-left block diagram, detailing the signal flow from sensor feedback to PWM generation. To its right, the droop controller regulates frequency, active power, and reactive power based on inputs derived from the Clarke and Park transforms, which convert three-phase AC measurements into a stationary dq reference frame. The resulting setpoints are fed into the nested control loops shown in the lower diagram. These loops regulate voltage and current through a series of PI controllers and anti-windup logic, ultimately producing the PWM signals required by the inverter boards for a stable three-phase power signal.</p>
+                                    <p class="mt-4 text-gray-600">
+                                        The system control architecture is outlined in the top-left block diagram, detailing the signal flow from sensor feedback to PWM generation. 
+                                        To its right, the droop controller regulates frequency, active power, and reactive power based on inputs derived from the Clarke and Park transforms, 
+                                        which convert three-phase AC measurements into a stationary dq reference frame. The resulting setpoints are fed into the nested control loops 
+                                        shown in the lower diagram. These loops regulate voltage and current through a series of PI controllers and anti-windup logic, ultimately producing 
+                                        the PWM signals required by the inverter boards for a stable three-phase power signal.
+                                    </p>
                                 </div>
                                 
                                 <div>
@@ -453,7 +570,12 @@
                                         <img src="images/blackstart_controller_inverter_unit.png" alt="Texas Instruments C2000 controller and BOOSTXL-3PHGaNINV inverter unit" class="rounded-lg shadow-md w-full object-contain">
                                         <img src="images/blackstart_full_electrical_setup.png" alt="Full electrical setup for the black-start project" class="rounded-lg shadow-md w-full object-contain">
                                     </div>
-                                    <p class="mt-4 text-gray-600">The top image displays the full assembly of a single inverter unit, featuring a custom-designed PCB that integrates the LC filter, sensors, isolation delta-wye transformer, and connection relay. We fabricated five identical inverters to test collective grid-forming capabilities. The bottom image shows the complete experimental setup, where the five units are organized into two distinct microgrids. This system includes dedicated DC power supplies, static loads, and a central interconnect relay to manage the synchronization of the two microgrids.</p>
+                                    <p class="mt-4 text-gray-600">
+                                        The top image displays the full assembly of a single inverter unit, featuring a custom-designed PCB that integrates the LC filter, sensors, isolation 
+                                        delta-wye transformer, and connection relay. We fabricated five identical inverters to test collective grid-forming capabilities. The bottom image 
+                                        shows the complete experimental setup, where the five units are organized into two distinct microgrids. This system includes dedicated DC power 
+                                        supplies, static loads, and a central interconnect relay to manage the synchronization of the two microgrids.
+                                    </p>
                                 </div>
                             </div>
 
@@ -473,19 +595,30 @@
                                 </h3>
                                 <span class="text-sm font-medium text-gray-500">2022</span>
                             </div>
-                            <p class="mt-1 text-gray-600">Nixie tubes are fascinating to me; the unique glow they emit is unlike anything else. When I decided to build a clock for myself, I learned a great deal about the engineering lifecycle—from initial breadboard prototyping to designing a custom PCB and integrating all the components into a compact enclosure. This project was a perfect way to deepen my understanding of electrical engineering and system integration.</p>
+                            <p class="mt-1 text-gray-600">
+                                Nixie tubes are fascinating to me; the unique glow they emit is unlike anything else. When I decided to build a clock for myself, I learned a great deal 
+                                about the engineering lifecycle—from initial breadboard prototyping to designing a custom PCB and integrating all the components into a compact enclosure. 
+                                This project was a perfect way to deepen my understanding of electrical engineering and system integration.
+                            </p>
                             
                             <div class="mt-8 space-y-8 max-w-3xl mx-auto">
                                 <div>
                                     <img src="images/nixie_dark.jpg" alt="Nixie tube clock illuminated in the dark" class="rounded-lg shadow-md w-full object-contain border">
-                                    <p class="mt-4 text text-gray-600">Shown above is the completed Nixie tube clock, housed in a custom 3D-printed chassis. The system is powered by a standard 12V DC input. On the top-right of the case, I integrated the switch and encoder (repurposed from a broken mouse) to allow for manual time adjustments and user interaction.</p>
+                                    <p class="mt-4 text text-gray-600">
+                                        Shown above is the completed Nixie tube clock, housed in a custom 3D-printed chassis. The system is powered by a standard 12V DC input. On the top-right 
+                                        of the case, I integrated the switch and encoder (repurposed from a broken mouse) to allow for manual time adjustments and user interaction.
+                                    </p>
                                 </div>
                                 <div>
                                     <div class="grid grid-cols-2 gap-4">
                                         <img src="images/nixie_top.jpg" alt="New side by side image A for Nixie clock" class="rounded-lg shadow-md w-full h-full object-cover">
                                         <img src="images/nixie_bottom.jpg" alt="New side by side image B for Nixie clock" class="rounded-lg shadow-md w-full h-full object-cover">
                                     </div>
-                                    <p class="mt-4 text text-gray-600">I designed this custom PCB in Altium, centered around an Arduino Mega microcontroller. The board integrates a Real-Time Clock (RTC), a 12V-to-240V high-voltage converter, and a BCD-to-decimal driver IC to control the Nixie tubes. For the user interface, I repurposed the scroll wheel and switch from a broken mouse to act as a rotary encoder. I then programmed the firmware to handle manual time adjustments, internal drift, and Daylight Savings transitions.</p>
+                                    <p class="mt-4 text text-gray-600">
+                                        I designed this custom PCB in Altium, centered around an Arduino Mega microcontroller. The board integrates a Real-Time Clock (RTC), a 12V-to-240V high-voltage 
+                                        converter, and a BCD-to-decimal driver IC to control the Nixie tubes. For the user interface, I repurposed the scroll wheel and switch from a broken mouse 
+                                        to act as a rotary encoder. I then programmed the firmware to handle manual time adjustments, internal drift, and Daylight Savings transitions.
+                                    </p>
                                 </div>
                             </div>
 
@@ -506,7 +639,11 @@
                                 </h3>
                                 <span class="text-sm font-medium text-gray-500">2023</span>
                             </div>
-                            <p class="mt-1 text-gray-600">I led the electrical engineering in the Intelligent Ground Vehicle competition for a semester in which I augmented the current design of a modified electrical wheel chair to include saftey precautions of an emergancy stop and wireless stop. Portions of hardware and software was completed by students from years prior. We achieved fourth place in the competition</p>
+                            <p class="mt-1 text-gray-600">
+                                I led the electrical engineering in the Intelligent Ground Vehicle competition for a semester in which I augmented the current design of a modified electrical wheel 
+                                chair to include saftey precautions of an emergancy stop and wireless stop. Portions of hardware and software was completed by students from years prior. 
+                                We achieved fourth place in the competition
+                            </p>
 
                             <div class="mt-8 space-y-8 max-w-3xl mx-auto">
                                 <div>
@@ -515,12 +652,19 @@
                                         <img src="images/igv_nrf.png" alt="The nRF radio transceiver wired to an Arduino" class="col-span-1 rounded-lg shadow-md w-full h-full object-cover">
                                         <img src="images/igv_nrf_box.png" alt="The 'Steve Stopper' emergency stop box" class="col-span-1 rounded-lg shadow-md w-full h-full object-cover">
                                     </div>
-                                    <p class="mt-4 text-gray-600">The full IGV platform (left), the nRF radio transceiver (middle), and the custom 'Steve Stopper' wireless emergency stop (right). I designed the proto board and software with safety as the primary requirement. To prevent runaways, the system includes an automatic heartbeat-loss failsafe that stops the robot if it goes out of range. Additionally, the box features a manual power shutoff linked to an onboard relay for immediate hardware-level disconnection.</p>
+                                    <p class="mt-4 text-gray-600">
+                                        The full IGV platform (left), the nRF radio transceiver (middle), and the custom 'Steve Stopper' wireless emergency stop (right). I designed the proto board 
+                                        and software with safety as the primary requirement. To prevent runaways, the system includes an automatic heartbeat-loss failsafe that stops the robot if 
+                                        it goes out of range. Additionally, the box features a manual power shutoff linked to an onboard relay for immediate hardware-level disconnection.
+                                    </p>
                                 </div>
                                 
                                 <div>
                                     <img src="images/igv_schematic.png" alt="High-level electrical schematic for the Intelligent Ground Vehicle" class="rounded-lg shadow-md w-full object-contain">
-                                    <p class="mt-4 text-gray-600">The high-level electrical schematic, illustrating the power distribution and safety circuits for the Intelligent Ground Vehicle. 12v lead-acid battteries were used to power the wheelchair base, giving us more than enough power to carry the required 20lb payload.</p>
+                                    <p class="mt-4 text-gray-600">
+                                        The high-level electrical schematic, illustrating the power distribution and safety circuits for the Intelligent Ground Vehicle. 12v lead-acid battteries 
+                                        were used to power the wheelchair base, giving us more than enough power to carry the required 20 lb payload.
+                                    </p>
                                 </div>
                             </div>
 
@@ -541,12 +685,21 @@
                                 </h3>
                                 <span class="text-sm font-medium text-gray-500">2020</span>
                             </div>
-                            <p class="mt-4 text-gray-600">Towards the end of highschool I became very interested in drones, deciding to build one myself. I curtailed parts to my own liking, sticking with 4s lipo batteries, eco motors and a stack esc and controller - a mid powered drone with everything a true race FPV drone had. After flying obsesively and crashing frequenly I decided to design disposable 3D printed protectors for expendages and a stronger antenna mount. As well as going in depth tuning, using getfpv software linked to my controller.</p>
+                            <p class="mt-4 text-gray-600">
+                                Towards the end of highschool I became very interested in drones, deciding to build one myself. I curtailed parts to my own liking, sticking with 4s lipo batteries, 
+                                eco motors and a stack esc and controller - a mid powered drone with everything a true race FPV drone had. After flying obsesively and crashing frequenly I 
+                                decided to design disposable 3D printed protectors for expendages and a stronger antenna mount. As well as going in depth tuning, using getfpv software linked 
+                                to my controller.
+                            </p>
                             
                             <div class="mt-8 space-y-8 max-w-3xl mx-auto">
                                 <div>
                                     <img src="images/drone_without_top.jpg" alt="Custom built FPV drone assembled" class="rounded-lg shadow-md w-full object-contain">
-                                    <p class="mt-4 text-gray-600">The assembled drone above is the final product. After researching components to find an optimal balance of power, durability, and cost, I selected high-KV brushless motors and a lightweight for responsive thrust. The build features an ESC + MCU stack integration, where I carefully managed cable routing to minimize EMI and ensure durability during high-G maneuvers. I also integrated a custom 3D-printed mounting for the FPV camera and antennas.</p>
+                                    <p class="mt-4 text-gray-600">
+                                        The assembled drone above is the final product. After researching components to find an optimal balance of power, durability, and cost, I selected high-KV 
+                                        brushless motors and a lightweight for responsive thrust. The build features an ESC + MCU stack integration, where I carefully managed cable routing to 
+                                        minimize EMI and ensure durability during high-G maneuvers. I also integrated a custom 3D-printed mounting for the FPV camera and antennas.
+                                    </p>
                                 </div>
 
                                 <div>
@@ -555,7 +708,10 @@
                                         <img src="images/drone_antenna.png" alt="3D printed antenna mount" class="rounded-lg shadow-md w-full h-full object-cover">
                                         <img src="images/drone_wing_protection.png" alt="3D printed arm protectors" class="rounded-lg shadow-md w-full h-full object-cover">
                                     </div>
-                                    <p class="mt-4 text-gray-600">After crash landing and running into trees, I decided it would be best to print protection for the most frequently impacted parts. Prior to these parts I used a lot of hot glue and some plastic drinking straws to hold up antennas.</p>
+                                    <p class="mt-4 text-gray-600">
+                                        After crash landing and running into trees, I decided it would be best to print protection for the most frequently impacted parts. Prior to these parts I 
+                                        used a lot of hot glue and some plastic drinking straws to hold up antennas.
+                                    </p>
                                 </div>
                             </div>
 
