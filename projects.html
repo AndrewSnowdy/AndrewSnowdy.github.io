@@ -56,7 +56,11 @@
                                 </h3>
                                 <span class="text-sm font-medium text-slate-500">Current Phase: Optimization</span>
                             </div>
-                            <p class="mt-1 text-gray-600">This project focuses on developing a robust locomotion controller for a quadruped robot. I am currently implementing a Whole Body Control (WBC) framework to manage contact forces and joint torques, paired with an Extended Kalman Filter (EKF) for fused IMU and leg odometry state estimation. The goal is to achieve stable locomotion over uneven terrain by bridging high-level trajectory planning with low-level motor PD control.</p>
+                            <p class="mt-1 text-gray-600">
+                                This project focuses on developing a robust locomotion controller for a quadruped robot. I am currently implementing a Whole Body Control (WBC) 
+                                framework to manage contact forces and joint torques, paired with an Extended Kalman Filter (EKF) for fused IMU and leg odometry state estimation. 
+                                The goal is to achieve stable locomotion, disterbance rejection, and possibly pedipulation (manipulation with legs).
+                            </p>
                             
                             <div class="mt-8 space-y-6 max-w-2xl mx-auto">
                                     <div class="space-y-4">
@@ -74,9 +78,20 @@
                                             </video>
                                         </div>
 
-                                        <p class="mt-4 text-sm text-gray-600">
-                                            <strong>System Performance:</strong> The top video demonstrates the simulation environment used to validate torque-level commands. Below it, the EKF visualization shows the filter's convergence on position and velocity during high-frequency foot-fall impacts. Current efforts are focused on reducing drift in the Z-axis during rapid gait transitions.
-                                        </p>
+                                        <div class="mt-4 text-sm text-gray-600">
+                                            </p>
+                                                While these demonstrations appear to be a simple standing task, they represent the core control foundation for high-performance locomotion. 
+                                                The system utilizes an Extended Kalman Filter (EKF) running at 800Hz to estimate the robot's floating-base state—predicting via IMU and 
+                                                updating through leg kinematics under assumed contact.
+                                            </p>
+
+                                            </p>
+                                                Simultaneously, a Whole Body Controller (WBC) runs at 500Hz, solving a Quadratic Program (QP) to determine optimal joint torques. 
+                                                This framework manages task-space accelerations for attitude and center of mass (CoM) control while enforcing friction cone and contact 
+                                                constraints. This hierarchical architecture provides the stability and data integrity required for transitioning into dynamic gait cycles 
+                                                and complex terrain navigation.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -99,7 +114,12 @@
                                 </h3>
                                 <span class="text-sm font-medium text-slate-500">Current Phase: Testing</span>
                             </div>
-                            <p class="mt-1 text-gray-600">Building on my previous FPV experience, I am developing an autonomous drone platform designed for GPS-denied environments. I am integrating an optical flow sensor and a downward-facing LiDAR for altitude hold. The software stack utilizes a companion computer (Raspberry Pi CM4) communicating over MAVLink to a Pixhawk flight controller, enabling offboard control modes for precision hovering and obstacle avoidance.</p>
+                            <p class="mt-1 text-gray-600">
+                                This project bridges the gap between high-speed flight and real-time edge computing. I am currently integrating dual-camera stereo mapping 
+                                and optical flow into a custom flight stack to enable autonomous navigation in unknown environments. By optimizing the vision pipeline for 
+                                low-latency throughput, we are enabling the UAV to perform aggressive maneuvers and proactive obstacle avoidance without relying on GPS or 
+                                a known map.
+                            </p>
                             
                             <div class="mt-8 space-y-8 max-w-3xl mx-auto">
                                 <div>
@@ -107,15 +127,20 @@
                                         <img src="images/drone_back.jpg" alt="New Drone CAD Design" class="rounded-lg shadow-md w-full h-full object-cover border">
                                         <img src="images/drone_front.jpg" alt="Bench Testing Setup" class="rounded-lg shadow-md w-full h-full object-cover border">
                                     </div>
-                                    <p class="mt-4 text-sm text-gray-600"><strong>Hardware Integration:</strong> Shown here is the custom carbon fiber frame layout (left) designed to house the additional compute payload, and the bench-testing setup (right) used for vibration isolation tuning. I am currently debugging the serial latency between the flight controller and the companion computer to ensure real-time command execution.</p>
+                                    <p class="mt-4 text-sm text-gray-600">
+                                        Early development is focusing on integrating an NVIDIA Jetson compute module and stereo vision suite for an autonomous UAV. 
+                                        My focus is on hardware-level configuration and benchmarking the vision pipeline to minimize latency in the perception-to-action 
+                                        loop. This foundational testing is critical for ensuring stable offboard control during future autonomous maneuvers
+                                    </p>
                                 </div>
                             </div>
 
                             <div class="mt-6 flex flex-wrap gap-2">
                                 <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">MAVLink</span>
                                 <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">PX4/ArduPilot</span>
-                                <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Embedded Linux</span>
-                                <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">CAD</span>
+                                <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Linux</span>
+                                <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Perception</span>
+                                <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">High Speed Processing</span>
                             </div>
                         </div>
 
@@ -129,9 +154,15 @@
                                         <span class="text-red-500 font-medium ml-1">[Active Development]</span>
                                     </a>
                                 </h3>
-                                <span class="text-sm font-medium text-slate-500">Current Phase: Sequence Tuning</span>
+                                <span class="text-sm font-medium text-slate-500">Current Phase: Autonomy</span>
                             </div>
-                            <p class="mt-1 text-gray-600">Developing a ROS 2-based state machine for a Human Support Robot (HSR) to perform autonomous navigation and manipulation tasks. The project involves coordinating base movement and arm IK modes to interact with environment-specific waypoints. I have implemented a modular C++ mission sequencer that handles TF-based convergence checks and provides fail-safe logic for path transitions.</p>
+                            <p class="mt-1 text-gray-600">
+                                Navigating doorway transitions remains a challenge in mobile manipulation. In environments like hospitals and corporate 
+                                offices, ADA-compliant handicap buttons offer a strategic interface for robotic systems to negotiate these transitions. 
+                                This project focuses on configuring a Toyota HSR robot to perform high-reliability autonomous navigation and manipulation. 
+                                By developing a custom navigation stack I will have enabled the robot to integrate obstacle avoidance and precision interaction 
+                                tasks, such as activating door switches and executing pick-and-place routines.
+                            </p>
                             
                             <div class="mt-8 space-y-6 max-w-2xl mx-auto">
                                 <div class="rounded-lg shadow-md overflow-hidden border bg-black">
@@ -149,7 +180,11 @@
                                 </div>
 
                                 <p class="mt-4 text-sm text-gray-600">
-                                    <strong>Sequence Progress:</strong> The top video shows the <code>APPROACH</code> and <code>PRESS</code> states in action. Below, the visualization tracks the TF-based convergence during the <code>RETRACT -> EXIT</code> transition. Current work focuses on optimizing acceleration profiles to prevent jerky base movement during long-distance navigation.
+                                    These clips feature a Human Support Robot performing a handicap door-opening task. To manage the arm's trajectory, 
+                                    I utilized Damped Least Squares IK to ensure robustness against kinematic singularities, with quintic splines 
+                                    generating the smooth, jerk-limited motion required for delicate interactions. Currently, the system operates via 
+                                    high-fidelity odometry; however, the integration of a YOLO-based perception layer is already underway to transition 
+                                    from pre-defined waypoints to dynamic, autonomous target acquisition.
                                 </p>
                             </div>
 
@@ -173,13 +208,13 @@
                                 </h3>
                                 <span class="text-sm font-medium text-gray-500">2025</span>
                             </div>
-                            <p class="mt-1 text-gray-600">NEURoam bridges the gap between heterogeneous robotic morphologies to create a unified data acquisition system. The fleet comprised of two wheeled robots, two quadrupeds, and a hybrid wheeled-quadruped. Each vehicle featured a standardized sensor payload centered on an NVIDIA Jetson Orin, providing consistency. By executing coordinated, pre-planned trajectories across the Northeastern campus, we maintained telemetry and captured a comprehensive environmental dataset. This effort resulted in the generation of high-resolution 3D maps derived from over 4 TB of processed sensor data.</p>
+                            <p class="mt-1 text-gray-600">NEURoam bridges the gap between heterogeneous robotic morphologies to create a unified data acquisition system. The fleet comprised of Boston Dynamics Spot, Unitree GO2 and GO2W, AgileX Scout and Hunter platforms. Each vehicle featured a standardized sensor payload centered on an NVIDIA Jetson Orin. By executing coordinated, pre-planned trajectories across the Northeastern campus, we maintained telemetry and captured a comprehensive environmental dataset. This effort resulted in the generation of high-resolution 3D maps derived from over 4 TB of processed sensor data.</p>
                             
                             <div class="mt-8 space-y-8 max-w-3xl mx-auto">
                             
                                 <div>
                                     <img src="images/roam_point_cloud.png" alt="Single full-width image for ROAM project" class="rounded-lg shadow-md w-full object-contain border">
-                                    <p class="mt-4 text-sm text-gray-600">Proof that 'Garbage In, Garbage Out' is a real thing. I spent my time in the embedded guts of the Jetson Orin to ensure the LiDAR and IMU data was perfectly synced. The SLAM team did the heavy lifting on the reconstruction, but it all started with reliable hardware timing</p>
+                                    <p class="mt-4 text-sm text-gray-600">A campus-scale reconstruction derived from one of the payloads. While the SLAM backend handled the spatial mapping, I was responsible for the embedded architecture that ensured sub-millisecond synchronization between the LiDAR and inertial sensors. By managing the hardware triggers and PPS (Pulse Per Second) signals on the Jetson Orin, I ensured the data integrity required for seamless environment mapping.</p>
                                 </div>
 
                             
@@ -198,10 +233,10 @@
                                     </div>
                                     <div class="mt-4 text-sm text-gray-600">
                                         <p>
-                                            Shown on the left is the initial Hardware-in-the-Loop prototype used for software validation and component integration. Although the early wiring was messy, this stage was critical for verifying communication between the NVIDIA Jetson Orin and the sensor suite, which includes FLIR stereo cameras, Ouster LiDAR, and a VectorNav IMU.
+                                            Shown on the left is the initial Hardware-in-the-Loop prototype used for software validation and component integration. Although the early wiring was messy, this stage was critical for verifying communication between the NVIDIA Jetson Orin and the sensor suite, which includes FLIR stereo cameras, Ouster LiDAR, VectorNav IMU, Zed-F9P GPS, and a doodle-labs radio.
                                         </p>
                                         <p>
-                                            Right: Open-Sky Testing & Precision Temporal Synchronization "Outdoor testing was conducted to achieve a cold-start GNSS lock for the Zed-F9P GPS module, which served as the heartbeat for system-wide synchronization. The GPS distributes 1Hz and 20Hz PPS (Pulse Per Second) hardware triggers to the LiDAR and cameras, ensuring all sensors are hardware-synchronized. By acquiring high-fidelity NMEA signals, we achieved a temporal alignment of +/- 100ms across the fleet, enabling consistent multi-robot perception and robust inter-payload communication.
+                                            Outdoor testing was conducted to achieve a cold-start GNSS lock for the Zed-F9P GPS module, which served as the heartbeat for system-wide synchronization. The GPS distributes 1Hz PPS and NMEA to the jetson and 20Hz triggers to the LiDAR and cameras, ensuring all sensors are hardware-synchronized. By acquiring high-fidelity NMEA signals, we achieved a temporal alignment of +/- 100ms across the fleet, enabling consistent multi-robot perception and robust inter-payload communication.
                                         </p>
                                     </div>
                                 </div>
