@@ -69,7 +69,7 @@
 
                                         <div class="overflow-hidden rounded-lg shadow-md border bg-black">
                                             <video class="w-full" autoplay loop muted playsinline>
-                                                <source src="videos/wbc_sim.mp4" type="video/mp4">
+                                                <source src="videos/wbc_sim_two.mp4" type="video/mp4">
                                                 Your browser does not support the video tag.
                                             </video>
                                         </div>
@@ -198,7 +198,7 @@
                                     </div>
                                     <div class="mt-4 text-sm text-gray-600">
                                         <p>
-                                            Left: Rapid Prototyping & Payload Integration "Shown here is the initial Hardware-in-the-Loop (HIL) prototype used for software validation and component integration. Although the early wiring was unoptimized, this stage was critical for verifying communication between the NVIDIA Jetson Orin 'brain' and the diverse sensor suite, which includes FLIR stereo cameras, Ouster LiDAR, and a VectorNav IMU. The modular design allowed us to troubleshoot interface issues before migrating the entire stack into the final custom-engineered enclosure."
+                                            Shown on the left is the initial Hardware-in-the-Loop prototype used for software validation and component integration. Although the early wiring was messy, this stage was critical for verifying communication between the NVIDIA Jetson Orin and the sensor suite, which includes FLIR stereo cameras, Ouster LiDAR, and a VectorNav IMU.
                                         </p>
                                         <p>
                                             Right: Open-Sky Testing & Precision Temporal Synchronization "Outdoor testing was conducted to achieve a cold-start GNSS lock for the Zed-F9P GPS module, which served as the heartbeat for system-wide synchronization. The GPS distributes 1Hz and 20Hz PPS (Pulse Per Second) hardware triggers to the LiDAR and cameras, ensuring all sensors are hardware-synchronized. By acquiring high-fidelity NMEA signals, we achieved a temporal alignment of +/- 100ms across the fleet, enabling consistent multi-robot perception and robust inter-payload communication.
@@ -208,7 +208,7 @@
 
                                 <div>
                                     <img src="images/roam_highbay_basestation.jpg" alt="Single full-width image for ROAM project" class="rounded-lg shadow-md w-full object-contain border">
-                                    <p class="mt-4 text-sm text-gray-600">This stage of the project where the core sensor suite had basic operation, and our focus shifted to establishing robust mesh networking. We encountered a significant hardware compatibility hurdle: a legacy Doodle Labs radio module (housed in the orange box) could not natively interface with the newer radio versions on our payloads. After exhaustive troubleshooting, I implemented a hardware-level bridge by hardwiring a current-generation radio directly to the legacy unit. To validate the performance of this hybrid network, I developed ROS nodes to benchmark throughput and latency, ensuring the mesh could handle the high-bandwidth requirements of our 4 TB data collection effort.</p>
+                                    <p class="mt-4 text-sm text-gray-600">This stage of the project where the core sensor suite had basic operation, and my focus shifted to establishing robust mesh networking. We encountered a significant hardware compatibility hurdle: legacy Doodle Labs radio modules (housed in the orange box) could not natively interface with the newer radio versions on our payloads. After exhaustive troubleshooting, I implemented a hardware-level bridge to newer radio units. To validate the performance of the network, I developed ROS nodes to benchmark throughput (IPERF) and latency (PING), ensuring the mesh had sufficient diagnostics during data collections.</p>
                                 </div>
                             </div>
 
@@ -227,7 +227,7 @@
                         <div class="border-b border-gray-200 pb-12">
                             <div class="flex justify-between items-center">
                                 <h3 class="text-xl font-bold">
-                                    <a href="#" class="project-link text-gray-900">Decentralized Multi-Robot SLAM via Consensus Optimization</a>
+                                    <a href="#" class="project-link text-gray-900">Decentralized Multi-Agent SLAM via Consensus Optimization</a>
                                 </h3>
                                 <span class="text-sm font-medium text-gray-500">2025</span>
                             </div>
@@ -243,6 +243,9 @@
                             <div class="mt-6 flex flex-wrap gap-2">
                                 <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Networking</span>
                                 <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Robotics</span>
+                                <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Optimization</span>
+                                <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Python</span>
+                                <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">C++</span>
                             </div>
                         </div>
                         
@@ -254,7 +257,14 @@
                                 </h3>
                                 <span class="text-sm font-medium text-gray-500">2024 - 2025</span>
                             </div>
-                            <p class="mt-1 text-gray-600">This is a short description of the project. Explain the main goal, what it does, and what your role was. Keep it concise and impactful.</p>
+                            <div class="mt-1 text-gray-600">
+                                <p>I started this project because I believe that lack of access to industrial-grade hardware shouldn't be a barrier to learning robotics. My goal was to design an arm that anyone could build on a budget, without sacrificing the accuracy and performance typically reserved for expensive commercial systems.</p>
+
+                                <p>The heart of this build—and the most challenging engineering hurdle—lies in the actuators. High precision and high torque are traditionally difficult to achieve with 3D-printed components, but by taking a fresh approach to gearbox design and FOC control, I’ve been able to bring this arm to life.</p>
+
+                                <p>Currently, I am finalizing a custom UI and prepping the project for a full open-source release on GitHub. Stay tuned for more updates as I move into complex manipulation tasks and refined motion planning.</p>
+
+                            </div>
                             
                             <div class="mt-8 space-y-8 max-w-3xl mx-auto">
                                 <div>
@@ -262,7 +272,7 @@
                                         <img src="images/arm_full_build.jpg" alt="Side by side image 1 for ROAM project" class="rounded-lg shadow-md w-full h-full object-cover">
                                         <img src="images/arm_fusion.png" alt="Side by side image 2 for ROAM project" class="rounded-lg shadow-md w-full h-full object-cover">
                                     </div>
-                                    <p class="mt-4 text-sm text-gray-600">A descriptive caption for the two images above.</p>
+                                    <p class="mt-4 text-sm text-gray-600">The full build of the arm (left) alongside the Fusion 360 model (right) highlights the mechanical packaging and weight distribution of the system. By moving the motors as close to the base pivots as possible and utilizing timing belt drives, I’ve significantly reduced joint inertia. The wrist was designed to be purely spherical, allowing Pieper's criteria to hold for efficient, closed-form analytic IK. For the end effector, I've integrated dual FeeTech STS3032 servos paired with compliant material so fingers can wrap around objects for a secure grip, while the servos provide real-time torque feedback. The entire system is powered by a compact, detachable dual 24V PSU.</p>
                                 </div>
                                 
                                 <div>
@@ -275,8 +285,8 @@
                                         <div class="md:col-span-2 bg-black rounded-lg overflow-hidden shadow-md">
                                             <video 
                                                 class="w-full h-full object-cover" 
-                                                autoplay loop muted playsinline>
-                                                <source src="images/arm_torque_test_shorter.mp4" type="video/mp4">
+                                                autoplay loop muted playsinline>    
+                                                <source src="videos/arm_torque_test_shorter.mp4" type="video/mp4">
                                                 Your browser does not support the video tag.
                                             </video>
                                         </div>
@@ -287,20 +297,17 @@
 
                                     </div>
                                     
-                                    <p class="mt-4 text-sm text-gray-600">
-                                        <strong>Cycloidal Actuator Development:</strong> A side-by-side comparison of the torque density characterization test (left) and the finalized physical actuator assembly (right).
-                                    </p>
+                                    <p class="mt-4 text-sm text-gray-600">A look at the gearbox evolution for my robotic arm project. Featured on top are the various iterations I’ve designed: two 40:1 cycloidal drives (NEMA 17 and NEMA 23 variants), three 28:1 harmonic drives with specialized couplings, and a NEMA 11-powered 4:1 planetary gear. Each motor is integrated with a rear-mounted MKS closed-loop FOC controller via CAN bus. The video below highlights early torque response testing—holding 15 lbs at a 0.5m moment arm—alongside a close-up of the cycloidal drive.</p>
                                 </div>
                             </div>
 
                             <div class="mt-6 flex flex-wrap gap-2">
                                 <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Linux</span>
-                                <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">ROS2</span>
                                 <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Python</span>
-                                <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Sensor Fusion</span>
-                                <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Networking</span>
                                 <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Electronics</span>
                                 <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Robotics</span>
+                                <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">Fusion 360</span>
+                                <span class="text-sm bg-gray-200 text-gray-800 px-2 py-1 rounded-md">3D-Printing</span>
                             </div>
                         </div>
 
