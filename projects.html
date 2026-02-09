@@ -94,7 +94,7 @@
                                 <h3 class="text-xl font-bold">
                                     <a href="#" class="project-link text-slate-800">
                                         Autonomous UAV Development 
-                                        <span class="text-blue-500 font-medium ml-1">[Active Development]</span>
+                                        <span class="text-red-500 font-medium ml-1">[Active Development]</span>
                                     </a>
                                 </h3>
                                 <span class="text-sm font-medium text-slate-500">Current Phase: Testing</span>
@@ -125,19 +125,32 @@
                             <div class="flex justify-between items-center">
                                 <h3 class="text-xl font-bold">
                                     <a href="#" class="project-link text-slate-800">
-                                        HSR Mobile Manipulator: Mission Sequencer 
-                                        <span class="text-blue-500 font-medium ml-1">[Active Development]</span>
+                                        HSR Mobile Manipulation
+                                        <span class="text-red-500 font-medium ml-1">[Active Development]</span>
                                     </a>
                                 </h3>
                                 <span class="text-sm font-medium text-slate-500">Current Phase: Sequence Tuning</span>
                             </div>
                             <p class="mt-1 text-gray-600">Developing a ROS 2-based state machine for a Human Support Robot (HSR) to perform autonomous navigation and manipulation tasks. The project involves coordinating base movement and arm IK modes to interact with environment-specific waypoints. I have implemented a modular C++ mission sequencer that handles TF-based convergence checks and provides fail-safe logic for path transitions.</p>
                             
-                            <div class="mt-8 space-y-8 max-w-3xl mx-auto">
-                                <div>
-                                    <img src="images/hsr_sim.png" alt="HSR State Machine Logic" class="rounded-lg shadow-md w-full object-contain border">
-                                    <p class="mt-4 text-sm text-gray-600"><strong>Sequence Progress:</strong> This project is currently in the refinement stage. I have successfully implemented the <code>APPROACH</code>, <code>PRESS</code>, and <code>RETRACT</code> states. Current work focuses on optimizing the acceleration profiles during the <code>RETRACT -> EXIT</code> transition to prevent jerky base movement when navigating large distances between waypoints.</p>
+                            <div class="mt-8 space-y-6 max-w-2xl mx-auto">
+                                <div class="rounded-lg shadow-md overflow-hidden border bg-black">
+                                    <video class="w-full" autoplay loop muted playsinline>
+                                        <source src="videos/hsr_real.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
                                 </div>
+
+                                <div class="rounded-lg shadow-md overflow-hidden border bg-black">
+                                    <video class="w-full" autoplay loop muted playsinline>
+                                        <source src="videos/hsr_sim.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+
+                                <p class="mt-4 text-sm text-gray-600">
+                                    <strong>Sequence Progress:</strong> The top video shows the <code>APPROACH</code> and <code>PRESS</code> states in action. Below, the visualization tracks the TF-based convergence during the <code>RETRACT -> EXIT</code> transition. Current work focuses on optimizing acceleration profiles to prevent jerky base movement during long-distance navigation.
+                                </p>
                             </div>
 
                             <div class="mt-6 flex flex-wrap gap-2">
@@ -254,7 +267,7 @@
                                 
                                 <div>
                                     <div class="w-full bg-slate-100 rounded-lg overflow-hidden shadow-md mb-4">
-                                        <img src="images/arm_gearboxes.png" alt="Description" class="w-full h-auto object-cover">
+                                        <img src="images/arm_actuators.jpg" alt="Description" class="w-full h-auto object-cover">
                                     </div>
 
                                     <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
