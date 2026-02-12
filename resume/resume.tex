@@ -1,7 +1,7 @@
 \documentclass[10pt,letterpaper]{article}
 
 % -------------------- Packages --------------------
-\usepackage[margin=0.65in]{geometry}
+\usepackage[left=0.65in, right=0.65in, top=0.5in, bottom=0.5in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
@@ -51,10 +51,12 @@
 % -------------------- Header --------------------
 \begin{center}
     {\LARGE \textbf{Andrew Snowdy}} \\[4pt]
+    \textit{U.S. Citizen} \;\;|\;\;
     \href{mailto:Drewsnowdy19@gmail.com}{Drewsnowdy19@gmail.com} \;\;|\;\;
-    Mobile: (716) 228--7038 \;\;|\;\;
+     (716) 228--7038 \;\;|\;\;
     \href{https://andrewsnowdy.github.io/}{Portfolio} \;\;|\;\;
-    \href{https://www.linkedin.com/in/andrew-snowdy-2a9833258/}{LinkedIn}
+    \href{https://www.linkedin.com/in/andrew-snowdy-2a9833258/}{LinkedIn} \;\;|\;\;
+    \href{https://github.com/AndrewSnowdy}{GitHub}
 \end{center}
 
 
@@ -71,28 +73,30 @@
 % -------------------- Experience --------------------
 \section*{Relevant Experience}
 
-\resumeEntry{Research Assistant -- Northeastern University}{March -- Present}
+\resumeEntry{Research Assistant -- Northeastern University}{March 2025 -- Present}
 \begin{itemize}[leftmargin=0.3in, topsep=0pt, itemsep=2pt, parsep=0pt]
-  \item NEUFlow: Developing a stereo vision pipeline for drone deployment, working on image synchronization, Linux CSI camera drivers, and V4L2/GStreamer-based video streaming.
-  \item NEURoam: Engineered a high-precision, multi-sensor time synchronization system on the NVIDIA Jetson Orin platform. Achieved nanosecond-level data correlation across a complex sensor suite (Ouster LiDAR, GPS, IMU, cameras, radios) to enable robust, real-time SLAM. Scaled across five networked payloads.
+  \item NEURoam: Architected a unified data acquisition platform for a diverse robotic fleet; implemented hardware-level synchronization (PPS/NMEA) across LiDAR, GPS, IMU, stereo cameras and radios on NVIDIA Jetson Orin to enable campus-scale 3D mapping. Expanded to a 5-robot mesh network.
+  \item NEUFlow: Integrated stereo mapping and optical-flow pipeline on Jetson for UAV autonomy; benchmarked latency and throughput to support real-time obstacle avoidance.
 \end{itemize}
 
-\resumeEntry{Moog -- Aircraft Group Internship}{May 2023 -- January 2025}{}
+\resumeEntry{Moog -- Aircraft Group Internship}{May 2023 -- January 2025}
 \begin{itemize}[leftmargin=0.3in, topsep=2pt, itemsep=2pt, parsep=0pt]
-  \item Assembled, calibrated, and tested hydraulic control units, power drive unit, and actuators under varied conditions to achieve FAA approval for flight.
-  \item Codified test-stand data from Gulfstream into a presentable format using MATLAB and VBA; analyzed results for anomalies. Created VBA scripts that are used company-wide for expediting data processing
+    \item Supported qualification testing of hydraulic control modules, power drive units, and actuators, executing functional and environmental procedures to meet FAA certification requirements.
+    \item Automated Gulfstream test-stand data processing in MATLAB and VBA, enabling anomaly identification and reducing manual reporting effort across the group.
 \end{itemize}
 
-\resumeEntry{Research Assistant -- Gannon University}{August 2021 -- May 2024}{}
+\resumeEntry{Research Assistant -- Gannon University}{August 2021 -- May 2024}
 \begin{itemize}[leftmargin=0.3in, topsep=2pt, itemsep=2pt, parsep=0pt]
-  \item Lead engineer for NASA-sponsored High Altitude Student Platform (HASP); rectified a legacy ground-station receiver and built a high-altitude payload using PCB design, C++, and Python.
-  \item Contributed to a 10-student team for the National Eclipse Ballooning Project (NEBP); built payloads including a UHF/VHF video transmitter, GPS tracking for cutdown, and sensor data collection.
+  \item Served as technical lead for NASA/NSF NEBP to design and deploy stratospheric balloon payloads, equipped with a multi-node communication system using Iridium satellite links and an XBee mesh network. 
+  \item Reverse-engineered legacy hardware to design custom PCBs in Altium for altitude control; integrated servos and sensor stacks for real-time flight diagnostics.
+  \item Developed a high-altitude payload using C++ and Python, and rectified a legacy ground-station receiver for 5.8 GHz Rocket M5 video and RFD 900 MHz telemetry downlinks.
 \end{itemize}
 
 \resumeEntry{Niagara Refining LLC -- Electrical Engineering Internship}{May -- August 2022}
 \begin{itemize}[leftmargin=0.3in, topsep=0pt, itemsep=2pt, parsep=0pt]
-  \item Assisted electrical engineers and electricians on industrial facility upgrades and maintenance projects.
-  \item Programmed and tuned VFDs, updated PLC ladder logic, replaced sensors, and troubleshot Siemens control hardware. Developed and installed communication systems; supported electrical renovations
+    \item Programmed VFDs and Siemens PLC systems for industrial equipment upgrades and preventative maintenance.
+    \item Configured Modbus/Profinet/ethernet communications and diagnosed control hardware to reduce downtime, supporting sensor replacement and electrical renovations.
+
 \end{itemize}
 
 
@@ -126,21 +130,21 @@
 
 \resumeEntry{Master's Project -- Autonomous Mobile Manipulation on Toyota HSR}{2025 -- Present}
 \begin{itemize}[leftmargin=0.3in, topsep=0pt, itemsep=2pt, parsep=0pt]
-  \item Built a ROS 2-based mobile manipulation system enabling the Toyota HSR robot to autonomously navigate and traverse doorways in indoor environments. Deployed on simulation (Gazebo) and hardware.
-  \item Integrated perception, inverse kinematics, planning, and collision avoidance for coordinated base–arm control.
+    \item Developed a ROS 2 navigation-manipulation stack enabling a Toyota HSR to approach and activate ADA door buttons in Gazebo and on hardware using TF-based alignment and waypoints.
+  \item Implemented Damped Least Squares IK and quintic splines for smooth trajectory generation.
 \end{itemize}
 
 
-\resumeEntry{Unitree Go2 -- Whole-Body Control \& State Estimation}{2024 -- Present}
+\resumeEntry{Unitree Go2 Control \& Estimation}{2024 -- Present}
 \begin{itemize}[leftmargin=0.3in, topsep=0pt, itemsep=2pt, parsep=0pt]
-  \item Designed and implemented a quadratic-programming-based whole-body controller with contact constraints for regulating centroidal and base attitude dynamics.
-  \item Developed an EKF-based state estimator fusing IMU and joint kinematics for floating-base pose and velocity estimation. Implemented and validated in C++ on hardware.
+\item Derived a C++ Whole-Body Controller solving a Quadratic Program at 500Hz to regulate centroidal dynamics while enforcing friction cone and contact constraints.
+  \item Established an 800Hz Extended Kalman Filter  to track floating-base pose and velocity by fusing high-frequency IMU data with leg kinematics via contact-point updates.
 \end{itemize}
 
 
 \resumeEntry{Robotic Arm Build -- Perception \& Control}{2023 -- 2024}
 \begin{itemize}[leftmargin=0.3in, topsep=0pt, itemsep=2pt, parsep=0pt]
-  \item Built a low-cost, 6-DOF, 3D-printed robotic arm with closed-loop control, integrating custom gearboxes (harmonic, cycloidal, planetary) and gripper force feedback for contact detection.
+  \item Built a low-cost, 6-DOF, 3D-printed robotic arm with closed-loop control over CAN, integrating custom gearboxes (harmonic, cycloidal, planetary) and gripper force feedback for contact detection.
 \end{itemize}
 
 % \resumeEntry{Undergraduate Capstone -- Black-Start Control for Inverter-Based Microgrids}{2023 -- 2024}
@@ -154,18 +158,18 @@
 
 \begin{multicols}{4}
 \begin{itemize}
-  \item Python, C, C++, 
+  \item C++, Python, C
+  \item CMake, Eigen, Pinocchio
+  \item ROS 2, DDS, Linux
+  \item QP-based Control
+  \item EKF, State Estimation
+  \item MuJoCo / Gazebo
+  \item Git / Subversion
   \item MATLAB, Simulink
-  \item GitHub / Subversion
-  \item Embedded Systems
-  \item Optimization (QP)
-  \item State Estimation (EKF)
-  \item Linux
-  \item ROS 2
-  \item Networking
+  \item CAN, UART, I2C
+  \item Chrony, GNSS, NMEA
   \item Altium, KiCad
   \item Fusion 360
-  \item LabVIEW
 \end{itemize}
 \end{multicols}
 
